@@ -1,0 +1,27 @@
+{
+  "name": "zebra",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "material-ui": "0.17.4",
+    "moment": "^2.18.1",
+    "onsenui": "^2.2.5",
+    "promise-polyfill": "^6.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-onsenui": "^1.4.0",
+    "react-redux": "^5.0.4",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.7.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
