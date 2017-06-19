@@ -1,3 +1,5 @@
-/**
- * Created by daniel on 6/19/17.
- */
+import { createStore } from 'redux';
+import reducer from './reducer';
+
+const store  = createStore(reducer);
+export default store;

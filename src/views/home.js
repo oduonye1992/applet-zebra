@@ -32,7 +32,7 @@ class Home extends Component {
                 style={{backgroundColor:'white'}}
             >
                 <div>
-                    <div style={{height:'90vh', backgroundColor:'#ecf0f1', 'max-height' : '90vh', overflow:'scroll'}}>
+                    <div style={{height:'95vh', backgroundColor:'#ecf0f1', 'max-height' : '90vh', overflow:'scroll'}}>
                         <div style={{height:'50vh', padding:10, display:'flex'}}>
                             <Carousel index={1} swipeable  itemHeight={30} autoScrollRatio={0.4} autoScroll>
                                 <CarouselItem key={1}>
@@ -105,8 +105,8 @@ class Home extends Component {
 
                     <div style={{position:'absolute', bottom:0, width:'100vw',
                         alignItems:'center',
-                        height:'8vh', backgroundColor:'#1abc9c'}}>
-                        <p style={{textAlign:'center'}}>Call for Free Quotes</p>
+                        height:'8vh', backgroundColor:'#1abc9c', alignItems:'center', justifyContent:'center', display:'flex'}}>
+                        <p style={{textAlign:'center', color:'white'}}>Call for Free Quotes</p>
                     </div>
                 </div>
             </Page>

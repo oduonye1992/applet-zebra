@@ -2,14 +2,14 @@
 :root {
   --background-color: white;
   --material-background-color: white;
-  --text-color: #fafdfa;
+  --text-color: #2c3e50;
   --sub-text-color: #999;
   --highlight-color: rgba(24, 103, 194, 0.81);
   --second-highlight-color: #25a6d9;
   --border-color: white;
   --toolbar-background-color: white;
   --toolbar-button-color: white;
-  --toolbar-text-color: white;
+  --toolbar-text-color: #2c3e50;
   --toolbar-border-color: white;
   --button-bar-color: rgba(18, 114, 224, 0.77);
   --button-bar-active-text-color: #fff;
