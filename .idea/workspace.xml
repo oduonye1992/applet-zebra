@@ -27,31 +27,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="400">
+              <caret line="234" column="44" lean-forward="true" selection-start-line="234" selection-start-column="44" selection-end-line="234" selection-end-column="44" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#802#6082#0" expanded="false" />
+                <element signature="e#802#6081#0" expanded="false" />
+                <element signature="n#!!block;n#renderLoader#0;n#Home#0" expanded="false" />
+                <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderSelect#0;n#Home#0" expanded="false" />
-                <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderText#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
-                <element signature="e#10671#11689#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
+                <element signature="e#10972#11990#0" expanded="false" />
                 <element signature="n#!!block;n#getChildContext#0;n#Home#0" expanded="false" />
-                <marker date="1497983024000" expanded="false" signature="7423:7647" ph="{...}" />
+                <marker date="1497990711000" expanded="false" signature="7422:7646" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="actions_list.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="actions_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="275" column="13" lean-forward="false" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
+            <state relative-caret-position="1798">
+              <caret line="85" column="47" lean-forward="true" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="n#!!block;n#getChildContext#0;n#ActionList#0" expanded="false" />
@@ -59,7 +61,6 @@
                 <element signature="n#!!block;n#subscribe#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#convertObjToArray#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#convertArrayToObj#0;n#ActionList#0" expanded="false" />
-                <element signature="n#!!block;n#renderEstimate#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#renderPackage#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#renderProducts#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#renderNumberOfUsers#0;n#ActionList#0" expanded="false" />
@@ -166,6 +167,7 @@
       <find>vehicle</find>
       <find>renderda</find>
       <find>vehicle</find>
+      <find>customi</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -182,8 +184,8 @@
         <option value="$PROJECT_DIR$/src/redux/reducer.js" />
         <option value="$PROJECT_DIR$/src/redux/store.js" />
         <option value="$PROJECT_DIR$/public/onsenui/src/theme.css" />
-        <option value="$PROJECT_DIR$/src/views/home.js" />
         <option value="$PROJECT_DIR$/src/views/actions_list.js" />
+        <option value="$PROJECT_DIR$/src/views/home.js" />
       </list>
     </option>
   </component>
@@ -369,7 +371,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;ho&#9;null&#9;null&#10;hom&#9;null&#9;null&#10;action&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;ho&#9;null&#9;null&#10;action&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -445,12 +447,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497884255996</updated>
-      <workItem from="1497884258370" duration="29568000" />
+      <workItem from="1497884258370" duration="31170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29568000" />
+    <option name="totallyTimeSpent" value="31170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1521" height="1129" extended-state="0" />
@@ -570,28 +572,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#802#6082#0" expanded="false" />
-            <element signature="n#!!block;n#renderSelect#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderText#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
-            <element signature="e#10671#11689#0" expanded="false" />
-            <element signature="n#!!block;n#getChildContext#0;n#Home#0" expanded="false" />
-            <marker date="1497983024000" expanded="false" signature="7423:7647" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="275" column="13" lean-forward="false" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
+        <state relative-caret-position="1798">
+          <caret line="85" column="47" lean-forward="true" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#getChildContext#0;n#ActionList#0" expanded="false" />
@@ -599,12 +583,31 @@
             <element signature="n#!!block;n#subscribe#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#convertObjToArray#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#convertArrayToObj#0;n#ActionList#0" expanded="false" />
-            <element signature="n#!!block;n#renderEstimate#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#renderPackage#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#renderProducts#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#renderNumberOfUsers#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#renderContract#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#renderDiscount#0;n#ActionList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="234" column="44" lean-forward="true" selection-start-line="234" selection-start-column="44" selection-end-line="234" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#802#6081#0" expanded="false" />
+            <element signature="n#!!block;n#renderLoader#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderSelect#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderText#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
+            <element signature="e#10972#11990#0" expanded="false" />
+            <element signature="n#!!block;n#getChildContext#0;n#Home#0" expanded="false" />
+            <marker date="1497990711000" expanded="false" signature="7422:7646" ph="{...}" />
           </folding>
         </state>
       </provider>

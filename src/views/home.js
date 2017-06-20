@@ -20,7 +20,7 @@ class Home extends Component {
                 {
                     id : 0,
                     text : 'What gender are you?',
-                    type : 'select',
+                    type : 'radio',
                     options : [
                         {id : 1, text : 'Male'},
                         {id : 2, text : 'Female'}
@@ -208,7 +208,7 @@ class Home extends Component {
                 <Icon icon = {question.icon} size="80" style={{fontSize:80, color:'#3498db'}} />
                 <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{question.text}</h4>
                 <SelectField
-                    onChange={(event, val)=>{
+                    onChange={(event, index, val)=>{
                         this.answerQuestion(id, val);
                     }}
                     value={question.answer}
@@ -230,7 +230,14 @@ class Home extends Component {
                 <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{question.text}</h4>
                 <div style={{display:'flex'}}>
                     {question.options.map(res => {
-                       return <RaisedButton label={res.text} style={{marginRight:2}} />
+                       return <RaisedButton
+                           label={res.text}
+                           onTouchTap={()=>{
+                                    this.answerQuestion(id, res.id);
+                                }
+                           }
+                           style={{marginRight:2}}
+                           primary={question.answer === res.id} />
                     })}
                 </div>
             </div>
