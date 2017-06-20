@@ -274,12 +274,6 @@ class ActionList extends Component {
                     <div className='right' style={{backgroundColor:'white'}}></div>
                 </Toolbar>
             }
-            renderModal={() => (
-                <Modal
-                    isOpen={this.state.isOpen}
-                >
-                </Modal>
-            )}
         >
             <Snackbar
                 open={this.state.openSnackbar}

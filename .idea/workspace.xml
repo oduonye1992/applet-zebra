@@ -51,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="292">
-              <caret line="272" column="26" lean-forward="true" selection-start-line="272" selection-start-column="26" selection-end-line="272" selection-end-column="26" />
+              <caret line="275" column="13" lean-forward="false" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="n#!!block;n#getChildContext#0;n#ActionList#0" expanded="false" />
@@ -445,12 +445,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497884255996</updated>
-      <workItem from="1497884258370" duration="29329000" />
+      <workItem from="1497884258370" duration="29568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29329000" />
+    <option name="totallyTimeSpent" value="29568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1521" height="1129" extended-state="0" />
@@ -591,7 +591,7 @@
     <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
-          <caret line="272" column="26" lean-forward="true" selection-start-line="272" selection-start-column="26" selection-end-line="272" selection-end-column="26" />
+          <caret line="275" column="13" lean-forward="false" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#getChildContext#0;n#ActionList#0" expanded="false" />
