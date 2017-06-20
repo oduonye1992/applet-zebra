@@ -81,6 +81,8 @@ class ActionList extends Component {
                     <p style={{fontSize:'smaller'}}>Customize quote for </p>
                     <TextField
                         hintText="Firstname Lastname"
+                        hintStyle={{fontFamily:'Avenir', color:'#2c3e50'}}
+                        inputStyle={{fontFamily:'Avenir', color:'#2c3e50'}}
                         style={{marginTop:-20}}
                     /><br />
                 </div>
@@ -109,6 +111,10 @@ class ActionList extends Component {
                         onChange={()=>{}}
                         style={{
                             marginTop:-20
+                        }}
+                        labelStyle={{
+                            color:'#2c3e50',
+                            fontFamily:'Avenir'
                         }}
                     >
                         <MenuItem value={1} primaryText="Never" />
@@ -143,6 +149,10 @@ class ActionList extends Component {
                         onChange={()=>{}}
                         style={{
                             marginTop:-20
+                        }}
+                        labelStyle={{
+                            color:'#2c3e50',
+                            fontFamily:'Avenir'
                         }}
                     >
                         <MenuItem value={1} primaryText="Never" />
@@ -202,6 +212,10 @@ class ActionList extends Component {
                         onChange={()=>{}}
                         style={{
                             marginTop:-20
+                        }}
+                        labelStyle={{
+                            color:'#2c3e50',
+                            fontFamily:'Avenir'
                         }}
                     >
                         <MenuItem value={1} primaryText="Never" />
