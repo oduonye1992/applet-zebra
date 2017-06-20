@@ -27,15 +27,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+            <state relative-caret-position="348">
+              <caret line="60" column="57" lean-forward="true" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#780#1292#0" expanded="false" />
+                <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
+                <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
+                <element signature="e#6800#7818#0" expanded="false" />
+                <element signature="e#7874#9947#0" expanded="false" />
                 <element signature="n#!!block;n#getChildContext#0;n#Home#0" expanded="false" />
+                <marker date="1497980859000" expanded="false" signature="3636:3860" ph="{...}" />
+                <marker date="1497980859000" expanded="false" signature="3881:4718" ph="{...}" />
+                <marker date="1497980859000" expanded="false" signature="3961:4701" ph="&lt;div/&gt;" />
+                <marker date="1497980859000" expanded="false" signature="5365:5918" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -44,10 +52,21 @@
       <file leaf-file-name="actions_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="220" column="18" lean-forward="true" selection-start-line="220" selection-start-column="18" selection-end-line="220" selection-end-column="18" />
+            <state relative-caret-position="431">
+              <caret line="291" column="22" lean-forward="true" selection-start-line="291" selection-start-column="22" selection-end-line="291" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <element signature="n#!!block;n#getChildContext#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#componentDidMount#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#subscribe#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#convertObjToArray#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#convertArrayToObj#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderEstimate#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderPackage#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderProducts#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderNumberOfUsers#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderContract#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderDiscount#0;n#ActionList#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="theme.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="theme.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/onsenui/src/theme.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="174">
+              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -145,6 +164,10 @@
       <find>send p</find>
       <find>renderto</find>
       <find>model</find>
+      <find>renderoptions</find>
+      <find>vehicle</find>
+      <find>vehicle</find>
+      <find>renderda</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -160,9 +183,9 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/redux/reducer.js" />
         <option value="$PROJECT_DIR$/src/redux/store.js" />
+        <option value="$PROJECT_DIR$/public/onsenui/src/theme.css" />
         <option value="$PROJECT_DIR$/src/views/actions_list.js" />
         <option value="$PROJECT_DIR$/src/views/home.js" />
-        <option value="$PROJECT_DIR$/public/onsenui/src/theme.css" />
       </list>
     </option>
   </component>
@@ -348,7 +371,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/public/onsenui/src/theme.css&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;ho&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;hom&#9;null&#9;null&#10;ho&#9;null&#9;null&#10;action&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -414,6 +437,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="884b8745-9de9-4c85-b9f3-2a200a3d7bb0" name="Default" comment="" />
@@ -421,25 +447,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497884255996</updated>
-      <workItem from="1497884258370" duration="16941000" />
+      <workItem from="1497884258370" duration="26246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16941000" />
+    <option name="totallyTimeSpent" value="26246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1521" height="1129" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31710616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31710616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -536,33 +562,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/onsenui/src/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="220" column="18" lean-forward="true" selection-start-line="220" selection-start-column="18" selection-end-line="220" selection-end-column="18" />
+        <state relative-caret-position="431">
+          <caret line="291" column="22" lean-forward="true" selection-start-line="291" selection-start-column="22" selection-end-line="291" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="n#!!block;n#getChildContext#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#subscribe#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#convertObjToArray#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#convertArrayToObj#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderEstimate#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderPackage#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderProducts#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderNumberOfUsers#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderContract#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderDiscount#0;n#ActionList#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+        <state relative-caret-position="348">
+          <caret line="60" column="57" lean-forward="true" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#780#1292#0" expanded="false" />
+            <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
+            <element signature="e#6800#7818#0" expanded="false" />
+            <element signature="e#7874#9947#0" expanded="false" />
             <element signature="n#!!block;n#getChildContext#0;n#Home#0" expanded="false" />
+            <marker date="1497980859000" expanded="false" signature="3636:3860" ph="{...}" />
+            <marker date="1497980859000" expanded="false" signature="3881:4718" ph="{...}" />
+            <marker date="1497980859000" expanded="false" signature="3961:4701" ph="&lt;div/&gt;" />
+            <marker date="1497980859000" expanded="false" signature="5365:5918" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/onsenui/src/theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
