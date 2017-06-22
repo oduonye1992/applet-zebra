@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Navigator} from 'react-onsenui';
 import './App.css';
 import Home from './views/home';
+import Select from './views/select';
+
 import ActionList from './views/actions_list';
 
 class App extends Component {

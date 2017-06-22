@@ -10,12 +10,15 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
 import Paper from 'material-ui/Paper';
+import Select from './select';
+import store from '../redux/store';
 
 class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
             questionIndex : 0,
+            parent : store.getState(),
             questions : [
                 {
                     id : 0,
@@ -41,17 +44,6 @@ class Home extends Component {
                 },
                 {
                     id : 2,
-                    text : 'What gender are you?',
-                    type : 'text',
-                    options : [
-                        {id : 1, text : 'Male'},
-                        {id : 2, text : 'Female'}
-                    ],
-                    icon : 'ion-ios-speedometer-outline',
-                    answer : 1
-                },
-                {
-                    id : 3,
                     text : 'Are you currently insured? If yes, for how long?',
                     type : 'select',
                     options : [
@@ -65,7 +57,7 @@ class Home extends Component {
                     answer : 1
                 },
                 {
-                    id : 4,
+                    id : 3,
                     text : 'Whats your credit score',
                     type : 'select',
                     options : [
@@ -77,7 +69,7 @@ class Home extends Component {
                     answer : 1
                 },
                 {
-                    id : 5,
+                    id : 4,
                     text : 'Whats your highest level of education?',
                     type : 'select',
                     options : [
@@ -90,29 +82,18 @@ class Home extends Component {
                     answer : 1
                 },
                 {
+                    id : 5,
+                    text : 'Do you own a house or Condo',
+                    type : 'radio',
+                    options : [
+                        {id : 1, text : 'Yes'},
+                        {id : 2, text : 'No'}
+                    ],
+                    icon : 'ion-ios-home-outline',
+                    answer : 1
+                },
+                {
                     id : 6,
-                    text : 'Do you own a house or Condo',
-                    type : 'radio',
-                    options : [
-                        {id : 1, text : 'Yes'},
-                        {id : 2, text : 'No'}
-                    ],
-                    icon : 'ion-ios-home-outline',
-                    answer : 1
-                },
-                {
-                    id : 7,
-                    text : 'Do you own a house or Condo',
-                    type : 'radio',
-                    options : [
-                        {id : 1, text : 'Yes'},
-                        {id : 2, text : 'No'}
-                    ],
-                    icon : 'ion-ios-home-outline',
-                    answer : 1
-                },
-                {
-                    id : 8,
                     text : 'Where do you park your car?',
                     type : 'text',
                     options : [
@@ -123,7 +104,7 @@ class Home extends Component {
                     answer : 1
                 },
                 {
-                    id : 9,
+                    id : 7,
                     text : 'How Much coverage would you like',
                     type : 'select',
                     options : [
@@ -136,7 +117,7 @@ class Home extends Component {
                     answer : 1
                 },
                 {
-                    id : 10,
+                    id : 8,
                     text : 'Are you married',
                     type : 'radio',
                     options : [
@@ -147,7 +128,7 @@ class Home extends Component {
                     answer : 1
                 },
                 {
-                    id : 11,
+                    id : 9,
                     text : 'Any accidents, tickets, claims or violations in the past 3 years?',
                     type : 'radio',
                     options : [
@@ -165,6 +146,74 @@ class Home extends Component {
         this.renderSelect = this.renderSelect.bind(this);
         this.renderText = this.renderText.bind(this);
         this.renderDate = this.renderDate.bind(this);
+        this.renderBottom = this.renderBottom.bind(this);
+        this.update = this.update.bind(this);
+        this.buildQueryString = this.buildQueryString.bind(this);
+    }
+    componentDidMount(){
+        // this.update();
+    }
+    parseResponse(response){
+        if (response.status >= 200 && response.status < 300) {
+            return response.json();
+        } else {
+            let error = new Error(response.statusText);
+            error.response = response;
+            throw error;
+        }
+    }
+    async update(){
+        try {
+            //let updatedResponse = await this.updateZebraRecord();
+            //let pollResult = await this.keepPolingUntilAResponseExists();
+            // let fetchResponse = await this.fetchZebraResponse();
+        } catch (e){
+            alert(e.message);
+        }
+    }
+    buildQueryString(paramsObj){
+        let queryString = '?q=q';
+        if (!paramsObj){
+            return queryString;
+        }
+        for(let key in paramsObj) {
+            if (paramsObj[key] !== undefined){
+                queryString += '&'+key+'='+paramsObj[key];
+            }
+        }
+        return queryString;
+    }
+    updateZebraRecord(){
+        return new Promise((resolve, reject) => {
+            let zebra = this.state.parent.zebra;
+            let proxy = "https://cors-anywhere.herokuapp.com/";
+            let url = 'https://www.thezebra.com/api/internal/v1/quote/'+zebra.id+'/'+this.buildQueryString(zebra)+'&ad_src_id=f&';
+            let options = {
+                method: 'PUT',
+                'Content-Type': 'application/json'
+            };
+            fetch(url, options)
+                .then(this.parseResponse)
+                .then(res => {
+                    resolve();
+                })
+                .catch(reject)
+        });
+    }
+    keepPolingUntilAResponseExists(){
+        return new Promise((resolve, reject) => {
+
+        });
+    }
+    fetchZebraResponse(){
+        return new Promise((resolve, reject) => {
+
+        });
+    }
+    fetchItem(){
+        return new Promise((resolve, reject) => {
+
+        });
     }
     handleChange = (event, index, value) => this.setState({value});
     renderLoader(id){
@@ -269,15 +318,73 @@ class Home extends Component {
             </div>
         );
     }
+    renderBottom(){
+        if (this.state.questionIndex !== this.state.questions.length-1){
+            return (<div style={{position:'absolute', bottom:0, width:'100vw',
+                height:'8vh', backgroundColor:'#ecf0f1', alignItems:'center', justifyContent:'center', display:'flex'}}>
+                <p style={{textAlign:'center', color:'#34495e', fontSize:'large'}}>Get Quotes</p>
+            </div>)
+        } else {
+            return (
+                <div
+                    onClick={()=>{
+                        this.props.navigator.pushPage({
+                            component : Select
+                        });
+                    }}
+                    style={{position:'absolute', bottom:0, width:'100vw',
+                    height:'8vh', backgroundColor:'#1abc9c', alignItems:'center', justifyContent:'center', display:'flex'}}>
+                    <p style={{textAlign:'center', color:'white', fontSize:'large'}}>Get Quotes</p>
+                </div>
+            )
+        }
+    }
+    renderEstimates(){
+        let zebra = this.state.parent.zebra;
+        if (!zebra.estimates){
+            return false;
+        }
+        return <Row>
+            {zebra.estimates.map(item => {
+                return <Col width="50">
+                    <Paper zDepth={1} style={{ height:150, display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
+                        <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{item.carrier_display_name}</h4>
+                        <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>{item.monthly_estimate.toFixed(2)}</h2>
+                    </Paper>
+                </Col>
+            })}
+        </Row>
+    }
     render(){
         return (
             <Page
+                renderToolbar={() =>
+                    <Toolbar>
+                        <div className='left' style={{backgroundColor:'#2c3e50'}}>
+                            <ToolbarButton onClick={()=>{
+                                this.props.navigator.popPage();
+                            }}>
+                                <Icon icon = "ion-chevron-left" style={{color:'white'}} />
+                            </ToolbarButton>
+                        </div>
+                        <div className='center' style={{backgroundColor:'#2c3e50', color:'white'}}>
+
+                        </div>
+                        <div className='right' style={{backgroundColor:'#2c3e50'}}></div>
+                    </Toolbar>
+                }
                 style={{backgroundColor:'white'}}
             >
                 <div>
                     <div style={{height:'95vh', backgroundColor:'#ecf0f1', 'max-height' : '90vh', overflow:'scroll'}}>
                         <div style={{height:'50vh', padding:10, display:'flex'}}>
-                            <Carousel index={0} swipeable  itemHeight={30} autoScrollRatio={0.4} autoScroll>
+                            <Carousel index={0} swipeable
+                                      onPostChange = {(e)=>{
+                                          this.setState({
+                                              questionIndex : e.activeIndex
+                                          }, this.update);
+                                      }}
+                                      itemHeight={30} autoScrollRatio={0.4} autoScroll>
                                 {this.state.questions.map(res =>{
                                    return (
                                        <CarouselItem key={res.id}>
@@ -293,40 +400,10 @@ class Home extends Component {
                             </Carousel>
                         </div>
                         <div style={{padding:10,   display:'flex', justifyContent:'space-between'}}>
-                            <Row>
-                                <Col width="50">
-                                    <Paper zDepth={1} style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
-                                        <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>West Bend Mutual</h4>
-                                        <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>32</h2>
-                                    </Paper>
-                                </Col>
-                                <Col width="50">
-                                    <Paper zDepth={1} style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
-                                        <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>West Bend Mutual</h4>
-                                        <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>32</h2>
-                                    </Paper>
-                                </Col>
-                                <Col width="50">
-                                    <Paper zDepth={1} style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
-                                        <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>West Bend Mutual</h4>
-                                        <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>32</h2>
-                                    </Paper>
-                                </Col>
-                                <Col width="50">
-                                    <Paper zDepth={1} style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
-                                        <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>West Bend Mutual</h4>
-                                        <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>32</h2>
-                                    </Paper>
-                                </Col>
-                            </Row>
+                            {this.renderEstimates()}
                         </div>
                     </div>
-
-                    <div style={{position:'absolute', bottom:0, width:'100vw',
-                        alignItems:'center',
-                        height:'8vh', backgroundColor:'#1abc9c', alignItems:'center', justifyContent:'center', display:'flex'}}>
-                        <p style={{textAlign:'center', color:'white'}}>Call for Free Quotes</p>
-                    </div>
+                    {this.renderBottom()}
                 </div>
             </Page>
         );

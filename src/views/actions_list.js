@@ -27,8 +27,13 @@ class ActionList extends Component {
             current_package_level : null,
             current_products : [],
             current_contract_type : null,
-            current_discount_available : null
-        }
+            current_discount_available : null,
+            year : 2017,
+            model : null,
+            make : null
+        };
+        this.fetchRecords = this.fetchRecords.bind(this);
+        this.renderFooter = this.renderFooter.bind(this);
     }
     update(obj){}
     getChildContext() {
@@ -36,6 +41,33 @@ class ActionList extends Component {
     }
     componentDidMount(){
         this.subscribe();
+        // this.fetchRecords();
+    }
+    fetchRecords(){
+        let proxy = "https://cors-anywhere.herokuapp.com/";
+        let url = 'https://www.thezebra.com/api/internal/v1/quote/session-based/?fetch=false&ad_src_id=f';
+        fetch(proxy+url, {mode: 'cors'})
+            .then(response => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    let error = new Error(response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            })
+            .then(res => {
+                store.dispatch({
+                    type : 'STUFF_CHANGED',
+                    data : {
+                        key : 'zebra',
+                        value : res
+                    }
+                });
+            })
+            .catch(e => {
+                console.error(e.message);
+            })
     }
     subscribe(){
         let that = this;
@@ -107,8 +139,12 @@ class ActionList extends Component {
                 <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
                     <p style={{fontSize:'smaller'}}>Vehicle Year </p>
                     <SelectField
-                        value={1}
-                        onChange={()=>{}}
+                        value={this.state.year}
+                        onChange={(event, key, payload)=>{
+                            this.setState({
+                                year : payload
+                            });
+                        }}
                         style={{
                             marginTop:-20
                         }}
@@ -117,11 +153,9 @@ class ActionList extends Component {
                             fontFamily:'Avenir'
                         }}
                     >
-                        <MenuItem value={1} primaryText="Never" />
-                        <MenuItem value={2} primaryText="Every Night" />
-                        <MenuItem value={3} primaryText="Weeknights" />
-                        <MenuItem value={4} primaryText="Weekends" />
-                        <MenuItem value={5} primaryText="Weekly" />
+                        {store.getState().lists.years.map(res => {
+                            return <MenuItem value={res.id} primaryText={res.title} />
+                        })}
                     </SelectField>
                 </div>
             </div>
@@ -145,8 +179,12 @@ class ActionList extends Component {
                 <div>
                     <p style={{fontSize:'smaller'}}>Vehicle Type </p>
                     <SelectField
-                        value={1}
-                        onChange={()=>{}}
+                        value={this.state.make}
+                        onChange={(a, b, c)=>{
+                            this.setState({
+                                make : c
+                            });
+                        }}
                         style={{
                             marginTop:-20
                         }}
@@ -155,11 +193,9 @@ class ActionList extends Component {
                             fontFamily:'Avenir'
                         }}
                     >
-                        <MenuItem value={1} primaryText="Never" />
-                        <MenuItem value={2} primaryText="Every Night" />
-                        <MenuItem value={3} primaryText="Weeknights" />
-                        <MenuItem value={4} primaryText="Weekends" />
-                        <MenuItem value={5} primaryText="Weekly" />
+                        {store.getState().lists.makes.map(res => {
+                            return <MenuItem value={res.make} primaryText={res.make} />
+                        })}
                     </SelectField>
                 </div>
             </div>
@@ -208,8 +244,12 @@ class ActionList extends Component {
                 <div>
                     <p style={{fontSize:'smaller'}}>Vehicle Model </p>
                     <SelectField
-                        value={1}
-                        onChange={()=>{}}
+                        value={this.state.model}
+                        onChange={(a, b, c)=>{
+                            this.setState({
+                                model : c
+                            });
+                        }}
                         style={{
                             marginTop:-20
                         }}
@@ -218,11 +258,9 @@ class ActionList extends Component {
                             fontFamily:'Avenir'
                         }}
                     >
-                        <MenuItem value={1} primaryText="Never" />
-                        <MenuItem value={2} primaryText="Every Night" />
-                        <MenuItem value={3} primaryText="Weeknights" />
-                        <MenuItem value={4} primaryText="Weekends" />
-                        <MenuItem value={5} primaryText="Weekly" />
+                        {store.getState().lists.models.map(res => {
+                            return <MenuItem value={res.model} primaryText={res.model} />
+                        })}
                     </SelectField>
                 </div>
             </div>
@@ -262,16 +300,38 @@ class ActionList extends Component {
             </div>
         </ListItem>
     }
-
+    renderFooter(){
+        if (this.state.model && this.state.year && this.state.make){
+            return <div
+                onClick={()=>{
+                    this.props.navigator.pushPage({
+                        component : Home
+                    });
+                }}
+                style={{position:'absolute', bottom:0, width:'100vw',
+                    alignItems:'center',
+                    height:'8vh', backgroundColor:'black', justifyContent:'center', display:'flex'}}>
+                <p style={{textAlign:'center', color:'white'}}>Get Quotes</p>
+            </div>
+        } else {
+            return <div
+                onClick={()=>{}}
+                style={{position:'absolute', bottom:0, width:'100vw',
+                    alignItems:'center',
+                    height:'8vh', backgroundColor:'#ecf0f1', justifyContent:'center', display:'flex'}}>
+                <p style={{textAlign:'center', color:'#2c3e50'}}>Get Quotes</p>
+            </div>
+        }
+    }
     render(){
         return <Page
             renderToolbar={() =>
                 <Toolbar>
-                    <div className='left' style={{backgroundColor:'white'}}></div>
-                    <div className='center' style={{backgroundColor:'white', color:'#2c3e50'}}>
-                        Compare Insurance
+                    <div className='left' style={{backgroundColor:'#9b59b6'}}></div>
+                    <div className='center' style={{backgroundColor:'#9b59b6', color:'white'}}>
+
                     </div>
-                    <div className='right' style={{backgroundColor:'white'}}></div>
+                    <div className='right' style={{backgroundColor:'#9b59b6'}}></div>
                 </Toolbar>
             }
         >
@@ -290,25 +350,20 @@ class ActionList extends Component {
                     }
                 }
             />
-            <section style={{padding:10, maxHeight:'80vh', overflow:'scroll'}}>
-                {this.renderEstimate()}
-                {this.renderNumberOfUsers()}
-                {this.renderPackage()}
-                {this.renderProducts()}
-                {this.renderContract()}
-                {this.renderDiscount()}
+            <section style={{maxHeight:'90vh', overflow:'scroll'}}>
+                <div style={{height:'34vh', backgroundColor:'#9b59b6', display:'flex',
+                    flexDirection:'column', alignItems:'flex-start', padding:20, justifyContent:'flex-end'}}>
+                    <h2 style={{color:'white'}}>
+                        Compare Insurance Quotes
+                    </h2>
+                </div>
+                <div style={{padding:10}}>
+                    {this.renderPackage()}
+                    {this.renderProducts()}
+                    {this.renderContract()}
+                </div>
             </section>
-            <div
-                onClick={()=>{
-                    this.props.navigator.pushPage({
-                        component : Home
-                    });
-                }}
-                style={{position:'absolute', bottom:0, width:'100vw',
-                alignItems:'center',
-                height:'8vh', backgroundColor:'#1abc9c', justifyContent:'center', display:'flex'}}>
-                <p style={{textAlign:'center', color:'white'}}>Get Quotes</p>
-            </div>
+            {this.renderFooter()}
         </Page>
     }
 }
