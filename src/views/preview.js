@@ -235,9 +235,7 @@ class Preview extends Component {
                     <Carousel style={{height:'92vh'}} index={0} swipeable onPostChange = {(e)=>{}} itemHeight='30vh' autoScrollRatio={0.4} autoScroll >
                         {featuredItems.map(res => {
                            return <CarouselItem key={res.id}>
-                               <img src="https://unsplash.it/800/600" style={{height:'92vh', width:'100vw'}}>
-
-                               </img>
+                               <img src={'https://unsplash.it/200/'+(100-Math.floor(Math.random()*50).toFixed(0))} style={{height:'92vh', width:'100vw'}}></img>
                                <div style={{ position:'absolute', top:0, height:'92vh', backgroundColor:res.color, opacity:0.9,
                                    display:'flex', alignItems:'flex-start', flexDirection:'column', justifyContent:'space-between',
                                    width:'100vw'

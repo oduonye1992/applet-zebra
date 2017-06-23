@@ -353,9 +353,9 @@ class ActionList extends Component {
             <section style={{maxHeight:'90vh', overflow:'scroll'}}>
                 <div style={{height:'34vh', backgroundColor:'#9b59b6', display:'flex',
                     flexDirection:'column', alignItems:'flex-start', padding:20, justifyContent:'flex-end'}}>
-                    <h2 style={{color:'white'}}>
-                        Compare Insurance Quotes
-                    </h2>
+                    <h3 style={{color:'white'}}>
+                        First, some basic questions
+                    </h3>
                 </div>
                 <div style={{padding:10}}>
                     {this.renderPackage()}
