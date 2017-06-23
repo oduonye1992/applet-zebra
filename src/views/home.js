@@ -360,23 +360,23 @@ class Home extends Component {
             <Page
                 renderToolbar={() =>
                     <Toolbar>
-                        <div className='left' style={{backgroundColor:'#2c3e50'}}>
+                        <div className='left' style={{backgroundColor:'white'}}>
                             <ToolbarButton onClick={()=>{
                                 this.props.navigator.popPage();
                             }}>
-                                <Icon icon = "ion-chevron-left" style={{color:'white'}} />
+                                <Icon icon = "ion-chevron-left" style={{color:'#2c3e50'}} />
                             </ToolbarButton>
                         </div>
-                        <div className='center' style={{backgroundColor:'#2c3e50', color:'white'}}>
+                        <div className='center' style={{backgroundColor:'white', color:'white'}}>
 
                         </div>
-                        <div className='right' style={{backgroundColor:'#2c3e50'}}></div>
+                        <div className='right' style={{backgroundColor:'white'}}></div>
                     </Toolbar>
                 }
                 style={{backgroundColor:'white'}}
             >
                 <div>
-                    <div style={{height:'95vh', backgroundColor:'#ecf0f1', 'max-height' : '90vh', overflow:'scroll'}}>
+                    <div style={{height:'95vh', backgroundColor:'white', 'max-height' : '90vh', overflow:'scroll'}}>
                         <div style={{height:'50vh', padding:10, display:'flex'}}>
                             <Carousel index={0} swipeable
                                       onPostChange = {(e)=>{
