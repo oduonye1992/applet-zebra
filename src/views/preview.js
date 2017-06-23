@@ -4,6 +4,7 @@ import {Page, Toolbar,Button, List,ListItem,ListHeader,
 import store from '../redux/store';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import ActionList from './actions_list';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
@@ -12,7 +13,6 @@ import Snackbar from 'material-ui/Snackbar';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Home from './home';
-import Preview from './preview';
 
 const styles = {
     root: {
@@ -135,68 +135,26 @@ const featuredItems = [
     {
         icon : 'ion-model-s',
         color : '#1abc9c',
-        title : 'Auto',
-        description : 'Every dollar counts. Get protected for less',
+        title : 'What is Auto Insurance?',
+        description : 'Basically you get paid whenever your car gets stolen',
         id : 0
     },
     {
         icon : 'ion-ios-body-outline',
         color : '#e74c3c',
-        title : 'Life',
-        description : 'Think bout your family. Insure your life now',
+        title : 'Why should I care?',
+        description : 'Because we love your car as much as you do. In actual truth, we just need your money',
         id : 1
     },
     {
         icon : 'ion-ios-medical-outline',
         color : '#8e44ad',
-        title : 'Medical',
-        description : 'Malaria? No Problem. We got you covered',
+        title : 'How does it work?',
+        description : 'Simple, you answer a bunch of questions and we provide an amount you have to pay every year. If something goes wrong, we will compensate you with a huge amount also.',
         id : 2
     }
 ];
-const tilesData = [
-    {
-        img: 'http://www.material-ui.com/images/grid-list/00-52-29-429_640.jpg',
-        title: 'Breakfast',
-        author: 'jill111',
-    },
-    {
-        img: 'http://www.material-ui.com/images/grid-list/burger-827309_640.jpg',
-        title: 'Tasty burger',
-        author: 'pashminu',
-    },
-    {
-        img: 'http://www.material-ui.com/images/grid-list/camera-813814_640.jpg',
-        title: 'Camera',
-        author: 'Danson67',
-    },
-    {
-        img: 'http://www.material-ui.com/images/grid-list/morning-819362_640.jpg',
-        title: 'Morning',
-        author: 'fancycrave1',
-    },
-    {
-        img: 'http://www.material-ui.com/images/grid-list/hats-829509_640.jpg',
-        title: 'Hats',
-        author: 'Hans',
-    },
-    {
-        img: 'http://www.material-ui.com/images/grid-list/honey-823614_640.jpg',
-        title: 'Honey',
-        author: 'fancycravel',
-    },
-    {
-        img: 'http://www.material-ui.com/images/grid-list/vegetables-790022_640.jpg',
-        title: 'Vegetables',
-        author: 'jill111',
-    },
-    {
-        img: 'http://www.material-ui.com/images/grid-list/water-plant-821293_640.jpg',
-        title: 'Water plant',
-        author: 'BkrmadtyaKarki',
-    },
-];
-class Splash extends Component {
+class Preview extends Component {
     constructor(props){
         super(props);
         this.state = {};
@@ -257,72 +215,52 @@ class Splash extends Component {
         }
         return returnObj
     }
-
+    renderFooter(){
+        return <div
+            onClick={()=>{
+                this.props.navigator.pushPage({
+                    component : ActionList
+                });
+            }}
+            style={{position:'absolute', bottom:0, width:'100vw',
+                alignItems:'center',
+                height:'8vh', backgroundColor:'#2c3e50', justifyContent:'center', display:'flex'}}>
+            <p style={{textAlign:'center', color:'white'}}>Get Started</p>
+        </div>
+    }
     render(){
         return <Page>
             <section style={{maxHeight:'100vh', overflow:'scroll'}}>
-                <div style={{height:'30vh'}}>
-                    <Carousel style={{height:'30vh'}} index={0} swipeable onPostChange = {(e)=>{}} itemHeight='30vh' autoScrollRatio={0.4} autoScroll >
+                <div style={{height:'92vh'}}>
+                    <Carousel style={{height:'92vh'}} index={0} swipeable onPostChange = {(e)=>{}} itemHeight='30vh' autoScrollRatio={0.4} autoScroll >
                         {featuredItems.map(res => {
                            return <CarouselItem key={res.id}>
-                               <div
-                                   onClick={()=>{
-                                       this.props.navigator.pushPage({
-                                           component : Preview
-                                       });
-                                   }}
-                                   style={{height:'30vh', backgroundColor:res.color,
-                                   display:'flex', alignItems:'center', justifyContent:'space-between',
-                                   paddingLeft:30, paddingRight:30
+                               <img src="https://unsplash.it/800/600" style={{height:'92vh', width:'100vw'}}>
+
+                               </img>
+                               <div style={{ position:'absolute', top:0, height:'92vh', backgroundColor:res.color, opacity:0.9,
+                                   display:'flex', alignItems:'flex-start', flexDirection:'column', justifyContent:'space-between',
+                                   width:'100vw'
                                }}>
-                                   <Icon icon = {res.icon} size="80" style={{fontSize:80, color:'white'}} />
-                                   <div style={{width:'60vw', display:'flex', flexDirection:'column', alignItems:'flex-end'}}>
-                                       <h1 style={{color:'white'}}>{res.title}</h1>
-                                       <p style={{color:'white', marginTop:'-3vh', textAlign:'right'}}>{res.description}</p>
+                                   <div style={{width:'60vw', display:'flex', paddingLeft:30, paddingRight:30, flexDirection:'column', alignItems:'flex-start'}}>
+                                       <h1 style={{ color:'white'}}>Auto Insurance</h1>
+                                   </div>
+                                   <div style={{width:'80vw', display:'flex', paddingLeft:30, paddingRight:30, flexDirection:'column', alignItems:'flex-start'}}>
+                                       <h3 style={{color:'white'}}>{res.title}</h3>
+                                       <p style={{color:'white', marginTop:'-3vh', fontSize:'larger'}}>{res.description}</p>
                                    </div>
                                </div>
                            </CarouselItem>
                         })}
                     </Carousel>
                 </div>
-                <div style={{padding:5}}>
-                    {items.map(res => {
-                       return <div style={{marginBottom:'-12vh'}}>
-                           <div style={{paddingLeft:10}}>
-                               <h5>{res.title}</h5>
-                           </div>
-                           <GridList style={styles.gridList} cols={2.2}>
-                               {res.items.map((item) => (
-                                   <GridTile
-                                       key={item.title}
-                                       titleStyle={styles.titleStyle}
-                                       titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-                                   >
-                                       <div
-                                           onClick={()=>{
-                                               this.props.navigator.pushPage({
-                                                   component : Preview
-                                               });
-                                            }
-                                           }
-                                           style={{height:100, width:100, display:'flex',
-                                           flexDirection:'column',
-                                           alignItems:'center', justifyContent:'center'}}>
-                                           <Icon icon = {item.icon} size="80" style={{fontSize:60, color:item.color}} />
-                                           <p style={{textAlign:'center', fontSize:'small', color:'#2c3e50'}}>{item.title}</p>
-                                       </div>
-                                   </GridTile>
-                               ))}
-                           </GridList>
-                       </div>
-                    })}
-                </div>
+                {this.renderFooter()}
             </section>
         </Page>
     }
 }
 
-Splash.childContextTypes = {
+Preview.childContextTypes = {
     muiTheme: getMuiTheme(baseTheme)
 };
-export default Splash;
+export default Preview;

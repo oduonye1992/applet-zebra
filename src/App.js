@@ -3,6 +3,7 @@ import {Navigator} from 'react-onsenui';
 import './App.css';
 import Home from './views/home';
 import Splash from './views/splash';
+import Preview from './views/preview';
 import Select from './views/select';
 
 import ActionList from './views/actions_list';
