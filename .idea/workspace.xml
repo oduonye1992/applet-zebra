@@ -55,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preview.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="preview.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/preview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="244" column="41" lean-forward="true" selection-start-line="244" selection-start-column="41" selection-end-line="244" selection-end-column="41" />
+            <state relative-caret-position="435">
+              <caret line="241" column="34" lean-forward="true" selection-start-line="241" selection-start-column="34" selection-end-line="241" selection-end-column="34" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#805#1065#0" expanded="false" />
@@ -104,19 +104,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="splash.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="splash.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/splash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="293" column="20" lean-forward="false" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
+            <state relative-caret-position="209">
+              <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#1079#1753#0" expanded="false" />
-                <element signature="e#1759#2420#0" expanded="false" />
-                <element signature="e#2426#3100#0" expanded="false" />
-                <element signature="e#3106#3767#0" expanded="false" />
-                <element signature="e#3794#4351#0" expanded="false" />
-                <element signature="e#4371#5586#0" expanded="false" />
+                <element signature="e#1079#1758#0" expanded="false" />
+                <element signature="e#1155#1752#0" expanded="false" />
+                <element signature="e#1764#2477#0" expanded="false" />
+                <element signature="e#2483#3144#0" expanded="false" />
+                <element signature="e#3170#3727#0" expanded="false" />
+                <element signature="e#3747#4962#0" expanded="false" />
                 <element signature="n#!!block;n#constructor#0;n#Splash#0" expanded="false" />
                 <element signature="n#!!block;n#getChildContext#0;n#Splash#0" expanded="false" />
                 <element signature="n#!!block;n#componentDidMount#0;n#Splash#0" expanded="false" />
@@ -209,8 +209,8 @@
       <find>updatedResponse</find>
       <find>#1abc9c</find>
       <find>renderf</find>
-      <find>GET QUO</find>
       <find>compa</find>
+      <find>GET QUO</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -230,9 +230,9 @@
         <option value="$PROJECT_DIR$/a.php" />
         <option value="$PROJECT_DIR$/src/views/home.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/views/splash.js" />
         <option value="$PROJECT_DIR$/src/views/actions_list.js" />
         <option value="$PROJECT_DIR$/src/views/preview.js" />
+        <option value="$PROJECT_DIR$/src/views/splash.js" />
       </list>
     </option>
   </component>
@@ -327,7 +327,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;action&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;ho&#9;null&#9;null&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;action&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;ho&#9;null&#9;null&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -403,12 +403,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497884255996</updated>
-      <workItem from="1497884258370" duration="64326000" />
+      <workItem from="1497884258370" duration="65689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64326000" />
+    <option name="totallyTimeSpent" value="65689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1541" height="1129" extended-state="0" />
@@ -580,29 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/splash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="293" column="20" lean-forward="false" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#1079#1753#0" expanded="false" />
-            <element signature="e#1759#2420#0" expanded="false" />
-            <element signature="e#2426#3100#0" expanded="false" />
-            <element signature="e#3106#3767#0" expanded="false" />
-            <element signature="e#3794#4351#0" expanded="false" />
-            <element signature="e#4371#5586#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#getChildContext#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#fetchRecords#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#subscribe#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#convertObjToArray#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#convertArrayToObj#0;n#Splash#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
@@ -628,12 +605,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/preview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="244" column="41" lean-forward="true" selection-start-line="244" selection-start-column="41" selection-end-line="244" selection-end-column="41" />
+        <state relative-caret-position="435">
+          <caret line="241" column="34" lean-forward="true" selection-start-line="241" selection-start-column="34" selection-end-line="241" selection-end-column="34" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#805#1065#0" expanded="false" />
             <element signature="e#1081#3778#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/splash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#1079#1758#0" expanded="false" />
+            <element signature="e#1155#1752#0" expanded="false" />
+            <element signature="e#1764#2477#0" expanded="false" />
+            <element signature="e#2483#3144#0" expanded="false" />
+            <element signature="e#3170#3727#0" expanded="false" />
+            <element signature="e#3747#4962#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#getChildContext#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#fetchRecords#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#subscribe#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#convertObjToArray#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#convertArrayToObj#0;n#Splash#0" expanded="false" />
           </folding>
         </state>
       </provider>

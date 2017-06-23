@@ -39,19 +39,44 @@ const items = [
                 color : '#1abc9c'
             },
             {
-                icon : 'ion-ios-flag-outline',
+                icon : 'ion-ios-videocam-outline',
                 title : 'Renters',
-                color : '#8e44ad'
+                color : '#c0392b'
             },
             {
-                icon : 'ion-ios-home-outline',
+                icon : 'ion-ios-rainy-outline',
                 title : 'Flood',
-                color : '#3498db'
+                color : '#f1c40f'
             },
             {
                 icon : 'ion-ios-flag-outline',
                 title : 'Renters.',
                 color : '#8e44ad'
+            }
+        ]
+    },
+    {
+        title : 'We\'ve got the right coverage for you',
+        items : [
+            {
+                icon : 'ion-social-bitcoin-outline',
+                title : 'Commercial Auto',
+                color : '#7f8c8d'
+            },
+            {
+                icon : 'ion-ios-medkit-outline',
+                title : 'General liability',
+                color : '#f39c12'
+            },
+            {
+                icon : 'ion-ios-cart-outline',
+                title : 'Business Owvers',
+                color : '#2980b9'
+            },
+            {
+                icon : 'ion-bowtie',
+                title : 'Professional Liabilities.',
+                color : '#27ae60'
             }
         ]
     },
@@ -79,57 +104,7 @@ const items = [
                 color : '#2c3e50'
             }
         ]
-    },
-    {
-        title : 'Open the door to your home and savings',
-        items : [
-            {
-                icon : 'ion-ios-home-outline',
-                title : 'Homeowners',
-                color : '#1abc9c'
-            },
-            {
-                icon : 'ion-ios-flag-outline',
-                title : 'Renters',
-                color : '#8e44ad'
-            },
-            {
-                icon : 'ion-ios-home-outline',
-                title : 'Flood',
-                color : '#3498db'
-            },
-            {
-                icon : 'ion-ios-flag-outline',
-                title : 'Renters.',
-                color : '#8e44ad'
-            }
-        ]
-    },
-    {
-        title : 'Get your motor running and get a quote',
-        items : [
-            {
-                icon : 'ion-model-s',
-                title : 'Auto',
-                color : '#e74c3c'
-            },
-            {
-                icon : 'ion-android-bicycle',
-                title : 'Motorcycle',
-                color : '#2c3e50'
-            },
-            {
-                icon : 'ion-ios-home-outline',
-                title : 'ATV',
-                color : '#27ae60'
-            },
-            {
-                icon : 'ion-android-bicycle',
-                title : 'Motorcycle.',
-                color : '#2c3e50'
-            }
-        ]
-    },
+    }
 ];
 const featuredItems = [
     {
