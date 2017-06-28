@@ -28,25 +28,38 @@ class ActionList extends Component {
             current_products : [],
             current_contract_type : null,
             current_discount_available : null,
-            year : 2017,
-            model : null,
-            make : null
+            year : null,
+            model : {},
+            make : null,
+            years : [],
+            models : [],
+            makes : [],
+            zebra : null,
+            zebra_questions : null
         };
         this.fetchRecords = this.fetchRecords.bind(this);
         this.renderFooter = this.renderFooter.bind(this);
+        this.fetchYear = this.fetchYear.bind(this);
+        this.fetchModel = this.fetchModel.bind(this);
+        this.fetchMake = this.fetchMake.bind(this);
+        this.logError = this.logError.bind(this);
+        this.submitForm = this.submitForm.bind(this);
     }
-    update(obj){}
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
     }
     componentDidMount(){
+        this.fetchRecords();
         this.subscribe();
-        // this.fetchRecords();
+        this.fetchYear();
     }
-    fetchRecords(){
-        let proxy = "https://cors-anywhere.herokuapp.com/";
-        let url = 'https://www.thezebra.com/api/internal/v1/quote/session-based/?fetch=false&ad_src_id=f';
-        fetch(proxy+url, {mode: 'cors'})
+    fetchYear(){
+        this.setState({
+            openSnackbar : true,
+            snackBarMessage : 'Loading cars...'
+        });
+        let url = 'https://www.thezebra.com/api/v2/vehicles/years/';
+        fetch(this.proxy+url, {mode: 'cors'})
             .then(response => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -57,17 +70,195 @@ class ActionList extends Component {
                 }
             })
             .then(res => {
-                store.dispatch({
-                    type : 'STUFF_CHANGED',
-                    data : {
-                        key : 'zebra',
-                        value : res
-                    }
+                if(res && res.result){
+                    this.setState({
+                        years : res.result,
+                        openSnackbar : false,
+                        snackBarMessage : 'Loading cars...'
+                    });
+                }
+            })
+            .catch(this.logError)
+    }
+    fetchModel(){
+        this.setState({
+            openSnackbar : true,
+            snackBarMessage : 'Loading cars...'
+        });
+        let url = 'https://www.thezebra.com/api/v2/vehicles/years/'+this.state.year+'/makes/'+this.state.make+'/models/';
+        fetch(this.proxy+url, {mode: 'cors'})
+            .then(response => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    let error = new Error(response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            })
+            .then(res => {
+                if(res && res.result){
+                    this.setState({
+                        models : res.result,
+                        openSnackbar : false,
+                        snackBarMessage : ''
+                    });
+                }
+            })
+            .catch(this.logError)
+    }
+    fetchMake(){
+        this.setState({
+            openSnackbar : true,
+            snackBarMessage : 'Loading Models...'
+        });
+        let url = 'https://www.thezebra.com/api/v2/vehicles/years/'+this.state.year+'/makes/';
+        fetch(this.proxy+url, {mode: 'cors'})
+            .then(response => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    let error = new Error(response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            })
+            .then(res => {
+                if(res && res.result){
+                    this.setState({
+                        makes : res.result,
+                        openSnackbar : false,
+                        snackBarMessage : ''
+                    });
+                }
+            })
+            .catch(this.logError)
+    }
+    logError(e){
+        this.setState({
+            openSnackbar : true,
+            snackBarMessage : 'Loading cars...'
+        });
+        alert(e.message);
+    }
+    proxy = "https://cors-anywhere.herokuapp.com/";
+    fetchRecords(){
+        let url = 'https://www.thezebra.com/api/internal/v1/quote/session-based/?fetch=false&ad_src_id=f';
+        fetch(this.proxy+url, {mode: 'cors'})
+            .then(response => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    let error = new Error(response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            })
+            .then(res => {
+                this.setState({
+                    zebra : res
                 });
             })
-            .catch(e => {
-                console.error(e.message);
-            })
+            .catch(this.logError)
+    }
+    submitForm(){
+        let ze = this.state.zebra;
+        let model = JSON.parse(this.state.model);
+        let zebra = {
+            "id": ze.id,
+            "session_id": ze.session_id,
+            "channel_id": ze.channel_id,
+            "subid": null,
+            "subid2": null,
+            "subid3": null,
+            "subid4": null,
+            "subid5": null,
+            "subid6": null,
+            "subid7": null,
+            "keyword": null,
+            "medium": null,
+            "source": null,
+            "buy_quote_ref_id": null,
+            "zipcode": "99144",
+            "city": "Lamona",
+            "state": "WA",
+            "credit_score": null,
+            "currently_insured": null,
+            "prior_carrier": null,
+            "prior_carrier_coverage_months": null,
+            "home_ownership": null,
+            "coverage": 0,
+            "coverage_selected": null,
+            "drivers": [{
+                "age": null,
+                "age_first_licensed": null,
+                "dob": null,
+                "driver_relationship": null,
+                "drivers_training": null,
+                "education": null,
+                "employment": null,
+                "excluded": null,
+                "first_name": null,
+                "gender": 0,
+                "good_student": null,
+                "incidents": [],
+                "incidents_selected": null,
+                "is_student": false,
+                "last_name": null,
+                "marital_status": null,
+                "other_applicable": null,
+                "primary_driver": true,
+                "uuid": null
+            }],
+            "vehicles": [{
+                "collision": null,
+                "comprehensive": null,
+                "garaging_address": null,
+                "has_alarm": null,
+                "make": this.state.make,
+                "miles_per_year": null,
+                "model": model.model,
+                "ownership": null,
+                "primary_use": null,
+                "rental_limit": null,
+                "submodel": model.default_style,
+                "towing_limit": null,
+                "vehicle_display_name": null,
+                "vehicle_id": model.default_vehicle_id,
+                "vin": model.default_vin,
+                "year": this.state.year
+            }],
+            "is_mobile": true,
+            "mobile_driver_count": 1,
+            "mobile_vehicle_count": 1,
+            "has_completed_mdv": false,
+            "ip_address": "197.149.67.66",
+            "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
+            "serial_request_id": 1498645588893,
+            "first_name": null,
+            "last_name": null,
+            "phone_number": null,
+            "email": null,
+            "address": null
+        };
+        // console.log(zebra);
+        store.dispatch({
+            type : 'STUFF_CHANGED',
+            data : {
+                key : 'zebra_questions',
+                value : zebra
+            }
+        });
+        store.dispatch({
+            type : 'STUFF_CHANGED',
+            data : {
+                key : 'zebra',
+                value : this.state.zebra
+            }
+        });
+        this.props.navigator.pushPage({
+            component : Home
+        });
     }
     subscribe(){
         let that = this;
@@ -77,59 +268,10 @@ class ActionList extends Component {
             });
         })
     }
-    convertObjToArray(obj){
-        let returnArray = [];
-        for (let key in obj){
-            returnArray.push(obj[key]);
-        }
-        return returnArray;
-    }
-    convertArrayToObj(arr, identifier){
-        let returnObj = {};
-        for (let i = 0; i < arr.length; i++){
-            returnObj[arr[i][identifier]] = arr[i];
-        }
-        return returnObj
-    }
-
-    renderEstimate(){
-        return <ListItem
-            longdivider
-            onTouchTap={()=>{
-                this.setState({
-                    isOpen : true,
-                    visibleOption : 'estimate'
-                });
-            }}
-            key="ssasa"
-        >
-            <div className='left'>
-                <div>
-                    <Icon icon = "ion-ios-personadd-outline" size="40" style={{color:'#91acb9', fontSize:'40px'}} />
-                </div>
-            </div>
-            <div className='center'>
-                <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
-                    <p style={{fontSize:'smaller'}}>Customize quote for </p>
-                    <TextField
-                        hintText="Firstname Lastname"
-                        hintStyle={{fontFamily:'Avenir', color:'#2c3e50'}}
-                        inputStyle={{fontFamily:'Avenir', color:'#2c3e50'}}
-                        style={{marginTop:-20}}
-                    /><br />
-                </div>
-            </div>
-            <div className='right'>
-                <div>
-                    <Icon icon = "ion-ios-arrow-right" size="30" style={{fontSize:'30px',  color:'#bdc3c7'}} />
-                </div>
-            </div>
-        </ListItem>
-    }
     renderPackage(){
         return <ListItem
             key="asalamsallassa"
-        >
+                >
             <div className='left'>
                 <div>
                     <Icon icon = "ion-ios-time-outline" size="35" style={{color:'#2ECEAE', fontSize:'35px'}} />
@@ -142,7 +284,11 @@ class ActionList extends Component {
                         value={this.state.year}
                         onChange={(event, key, payload)=>{
                             this.setState({
-                                year : payload
+                                year : payload,
+                                model : {},
+                                make : null
+                            }, ()=>{
+                                this.fetchMake();
                             });
                         }}
                         style={{
@@ -153,8 +299,8 @@ class ActionList extends Component {
                             fontFamily:'Avenir'
                         }}
                     >
-                        {store.getState().lists.years.map(res => {
-                            return <MenuItem value={res.id} primaryText={res.title} />
+                        {this.state.years.map(res => {
+                            return <MenuItem value={res.year} primaryText={res.year} />
                         })}
                     </SelectField>
                 </div>
@@ -182,7 +328,10 @@ class ActionList extends Component {
                         value={this.state.make}
                         onChange={(a, b, c)=>{
                             this.setState({
-                                make : c
+                                make : c,
+                                model : {}
+                            },()=>{
+                                this.fetchModel();
                             });
                         }}
                         style={{
@@ -193,35 +342,10 @@ class ActionList extends Component {
                             fontFamily:'Avenir'
                         }}
                     >
-                        {store.getState().lists.makes.map(res => {
+                        {this.state.makes.map(res => {
                             return <MenuItem value={res.make} primaryText={res.make} />
                         })}
                     </SelectField>
-                </div>
-            </div>
-            <div className='right'>
-                <div>
-                    <Icon icon = "ion-ios-arrow-right" size="30" style={{fontSize:'30px',  color:'#bdc3c7'}} />
-                </div>
-            </div>
-        </ListItem>
-    }
-    renderNumberOfUsers(){
-        return <ListItem
-            key="askmdsdsa"
-        >
-            <div className='left'>
-                <div>
-                    <Icon icon = "ion-ios-navigate-outline" size="40" style={{color:'#53adde', fontSize:'40px'}} />
-                </div>
-            </div>
-            <div className='center'>
-                <div>
-                    <p style={{fontSize:'smaller'}}>Enter your ZIP code </p>
-                    <TextField
-                        hintText=""
-                        style={{marginTop:-20}}
-                    /><br />
                 </div>
             </div>
             <div className='right'>
@@ -258,39 +382,10 @@ class ActionList extends Component {
                             fontFamily:'Avenir'
                         }}
                     >
-                        {store.getState().lists.models.map(res => {
-                            return <MenuItem value={res.model} primaryText={res.model} />
+                        {this.state.models.map(res => {
+                            return <MenuItem value={JSON.stringify(res)} primaryText={res.model} />
                         })}
                     </SelectField>
-                </div>
-            </div>
-            <div className='right'>
-                <div>
-                    <Icon icon = "ion-ios-arrow-right" size="30" style={{fontSize:'30px',  color:'#bdc3c7'}} />
-                </div>
-            </div>
-        </ListItem>
-    }
-    renderDiscount(){
-        return null;
-        return <ListItem
-            onTouchTap={()=>{
-                this.setState({
-                    isOpen : true,
-                    visibleOption : 'discount'
-                });
-            }}
-            key="212212"
-        >
-            <div className='left'>
-                <div>
-                    <Icon icon = "ion-ios-pricetags-outline" size="35" style={{color:'#8e44ad', fontSize:'35px'}} />
-                </div>
-            </div>
-            <div className='center'>
-                <div>
-                    <p style={{fontSize:'smaller'}}>Discount Available </p>
-                    <p style={{ marginTop:-10, fontSize:'15px'}}>{this.state.current_discount_available ? this.state.current_discount_available.title : 'Please Specify'}</p>
                 </div>
             </div>
             <div className='right'>
@@ -304,9 +399,7 @@ class ActionList extends Component {
         if (this.state.model && this.state.year && this.state.make){
             return <div
                 onClick={()=>{
-                    this.props.navigator.pushPage({
-                        component : Home
-                    });
+                    this.submitForm();
                 }}
                 style={{position:'absolute', bottom:0, width:'100vw',
                     alignItems:'center',

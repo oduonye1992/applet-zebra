@@ -11,6 +11,7 @@ import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
 import Paper from 'material-ui/Paper';
 import Select from './select';
+import CircularProgress from 'material-ui/CircularProgress';
 import store from '../redux/store';
 
 class Home extends Component {
@@ -138,7 +139,8 @@ class Home extends Component {
                     icon : 'ion-ios-clock-outline',
                     answer : 1
                 }
-            ]
+            ],
+            zebra : null
         };
         this.renderLoader = this.renderLoader.bind(this);
         this.renderQuestion = this.renderQuestion.bind(this);
@@ -151,7 +153,7 @@ class Home extends Component {
         this.buildQueryString = this.buildQueryString.bind(this);
     }
     componentDidMount(){
-        // this.update();
+        this.update();
     }
     parseResponse(response){
         if (response.status >= 200 && response.status < 300) {
@@ -164,11 +166,11 @@ class Home extends Component {
     }
     async update(){
         try {
-            //let updatedResponse = await this.updateZebraRecord();
-            //let pollResult = await this.keepPolingUntilAResponseExists();
-            // let fetchResponse = await this.fetchZebraResponse();
+            let updatedResponse = await this.updateZebraRecord();
+            let pollResult = await this.keepPolingUntilAResponseExists();
+            let fetchResponse = await this.fetchZebraResponse();
         } catch (e){
-            alert(e.message);
+            alert('Error: '+e.message);
         }
     }
     buildQueryString(paramsObj){
@@ -185,29 +187,78 @@ class Home extends Component {
     }
     updateZebraRecord(){
         return new Promise((resolve, reject) => {
-            let zebra = this.state.parent.zebra;
-            let proxy = "https://cors-anywhere.herokuapp.com/";
-            let url = 'https://www.thezebra.com/api/internal/v1/quote/'+zebra.id+'/'+this.buildQueryString(zebra)+'&ad_src_id=f&';
-            let options = {
-                method: 'PUT',
-                'Content-Type': 'application/json'
-            };
-            fetch(url, options)
+            let zebra = store.getState().zebra_questions;
+            let url = 'https://www.thezebra.com/api/internal/v1/quote/'+zebra.id;//'?ad_src_id=f&_estimates=false&fetch=false';
+            let pro = 'https://cors-anywhere.herokuapp.com/';
+            let proxy = pro+"https://secret-cove-21526.herokuapp.com?url="+url+'&data='+JSON.stringify(zebra);
+            fetch(proxy, {mode: 'cors'})
                 .then(this.parseResponse)
                 .then(res => {
-                    resolve();
+                    console.log(res);
+                    this.setState({
+                        zebra : res
+                    },resolve);
                 })
                 .catch(reject)
         });
     }
     keepPolingUntilAResponseExists(){
+        let poll = (callback) => {
+            let zebra = store.getState().zebra_questions;
+            let proxy = "https://cors-anywhere.herokuapp.com/";
+            let url = 'https://secret-cove-21526.herokuapp.com?mode=probe&sessionID='+zebra.session_id;
+            console.log(url);
+            fetch(proxy+url, {mode: 'cors'})
+                .then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        let error = new Error(response.statusText);
+                        error.response = response;
+                        throw error;
+                    }
+                })
+                .then(res => {
+                    if(res && res.ready){
+                        callback();
+                    } else {
+                        poll(callback);
+                    }
+                })
+                .catch((e)=>{
+                    console.error('Error '+e.message);
+                    poll(callback);
+                })
+        };
         return new Promise((resolve, reject) => {
-
+            poll(resolve);
         });
     }
     fetchZebraResponse(){
         return new Promise((resolve, reject) => {
-
+            let zebra = store.getState().zebra_questions;
+            let proxy = "https://cors-anywhere.herokuapp.com/";
+            let url = 'https://secret-cove-21526.herokuapp.com?mode=fetch&sessionID='+zebra.session_id;
+            console.log(url);
+            fetch(proxy+url, {mode: 'cors'})
+                .then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        let error = new Error(response.statusText);
+                        error.response = response;
+                        throw error;
+                    }
+                })
+                .then(res => {
+                    this.setState({
+                        zebra : res
+                    },resolve);
+                })
+                .catch((e)=>{
+                    console.error('Error '+e.message);
+                    reject(e);
+                })
         });
     }
     fetchItem(){
@@ -248,7 +299,7 @@ class Home extends Component {
         questions[id] = question;
         this.setState({
             questions
-        })
+        }, this.update);
     }
     renderSelect(id){
         let question = this.state.questions[id];
@@ -340,20 +391,31 @@ class Home extends Component {
         }
     }
     renderEstimates(){
-        let zebra = this.state.parent.zebra;
-        if (!zebra.estimates){
-            return false;
+        let zebra = this.state.zebra;
+        if (!(zebra && zebra.estimates)){
+            return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                <CircularProgress color="black" />
+            </div>
         }
-        return <Row>
-            {zebra.estimates.map(item => {
-                return <Col width="50">
-                    <Paper zDepth={1} style={{ height:150, display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
-                        <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{item.carrier_display_name}</h4>
-                        <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>{item.monthly_estimate.toFixed(2)}</h2>
-                    </Paper>
-                </Col>
-            })}
-        </Row>
+        if (!zebra.estimates.length){
+            return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                <p>More info needed</p>
+            </div>
+        }
+        return (
+            <div style={{padding:10,   display:'flex', justifyContent:'space-between'}}>
+                <Row>
+                    {zebra.estimates.map(item => {
+                        return <Col width="50">
+                            <Paper zDepth={1} style={{ height:150, display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
+                                <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{item.carrier_display_name}</h4>
+                                <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>{item.monthly_estimate.toFixed(2)}</h2>
+                            </Paper>
+                        </Col>
+                    })}
+                </Row>
+            </div>
+        );
     }
     render(){
         return (
@@ -399,9 +461,7 @@ class Home extends Component {
                                 })}
                             </Carousel>
                         </div>
-                        <div style={{padding:10,   display:'flex', justifyContent:'space-between'}}>
-                            {this.renderEstimates()}
-                        </div>
+                        {this.renderEstimates()}
                     </div>
                     {this.renderBottom()}
                 </div>

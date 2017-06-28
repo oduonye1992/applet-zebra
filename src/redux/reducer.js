@@ -901,36 +901,12 @@ const reducer = function(state, action) {
                 }],
                 "zipcode": "55044"
             },
-            lists : {
-                years : [
-                    {id : 2017, title : 2017},
-                    {id : 2016, title : 2016},
-                    {id : 2015, title : 2015},
-                    {id : 2014, title : 2014},
-                    {id : 2013, title : 2013},
-                    {id : 2012, title : 2012},
-                    {id : 2011, title : 2011},
-                    {id : 2010, title : 2010},
-                    {id : 2009, title : 2009},
-                    {id : 2008, title : 2008},
-                    {id : 2007, title : 2007},
-                    {id : 2006, title : 2006},
-                    {id : 2005, title : 2005},
-                    {id : 2004, title : 2004},
-                    {id : 2003, title : 2003},
-                    {id : 2002, title : 2002}
-                ],
-                makes : [{"make":"Acura","next":"/api/v2/vehicles/years/2011/makes/Acura/models/"},{"make":"Audi","next":"/api/v2/vehicles/years/2011/makes/Audi/models/"},{"make":"BMW","next":"/api/v2/vehicles/years/2011/makes/BMW/models/"},{"make":"Buick","next":"/api/v2/vehicles/years/2011/makes/Buick/models/"},{"make":"Cadillac","next":"/api/v2/vehicles/years/2011/makes/Cadillac/models/"},{"make":"Chevrolet","next":"/api/v2/vehicles/years/2011/makes/Chevrolet/models/"},{"make":"Chrysler","next":"/api/v2/vehicles/years/2011/makes/Chrysler/models/"},{"make":"Dodge","next":"/api/v2/vehicles/years/2011/makes/Dodge/models/"},{"make":"Ford","next":"/api/v2/vehicles/years/2011/makes/Ford/models/"},{"make":"GMC","next":"/api/v2/vehicles/years/2011/makes/GMC/models/"},{"make":"Honda","next":"/api/v2/vehicles/years/2011/makes/Honda/models/"},{"make":"Hyundai","next":"/api/v2/vehicles/years/2011/makes/Hyundai/models/"},{"make":"INFINITI","next":"/api/v2/vehicles/years/2011/makes/INFINITI/models/"},{"make":"Jaguar","next":"/api/v2/vehicles/years/2011/makes/Jaguar/models/"},{"make":"Jeep","next":"/api/v2/vehicles/years/2011/makes/Jeep/models/"},{"make":"Kia","next":"/api/v2/vehicles/years/2011/makes/Kia/models/"},{"make":"Land Rover","next":"/api/v2/vehicles/years/2011/makes/Land%20Rover/models/"},{"make":"Lexus","next":"/api/v2/vehicles/years/2011/makes/Lexus/models/"},{"make":"Lincoln","next":"/api/v2/vehicles/years/2011/makes/Lincoln/models/"},{"make":"Mazda","next":"/api/v2/vehicles/years/2011/makes/Mazda/models/"},{"make":"Mercedes-Benz","next":"/api/v2/vehicles/years/2011/makes/Mercedes-Benz/models/"},{"make":"Mercury","next":"/api/v2/vehicles/years/2011/makes/Mercury/models/"},{"make":"MINI","next":"/api/v2/vehicles/years/2011/makes/MINI/models/"},{"make":"Mitsubishi","next":"/api/v2/vehicles/years/2011/makes/Mitsubishi/models/"},{"make":"Nissan","next":"/api/v2/vehicles/years/2011/makes/Nissan/models/"},{"make":"Porsche","next":"/api/v2/vehicles/years/2011/makes/Porsche/models/"},{"make":"Ram","next":"/api/v2/vehicles/years/2011/makes/Ram/models/"},{"make":"Saab","next":"/api/v2/vehicles/years/2011/makes/Saab/models/"},{"make":"Scion","next":"/api/v2/vehicles/years/2011/makes/Scion/models/"},{"make":"Smart","next":"/api/v2/vehicles/years/2011/makes/Smart/models/"},{"make":"Subaru","next":"/api/v2/vehicles/years/2011/makes/Subaru/models/"},{"make":"Suzuki","next":"/api/v2/vehicles/years/2011/makes/Suzuki/models/"},{"make":"Tesla","next":"/api/v2/vehicles/years/2011/makes/Tesla/models/"},{"make":"Toyota","next":"/api/v2/vehicles/years/2011/makes/Toyota/models/"},{"make":"Volkswagen","next":"/api/v2/vehicles/years/2011/makes/Volkswagen/models/"},{"make":"Volvo","next":"/api/v2/vehicles/years/2011/makes/Volvo/models/"}],
-                models : [{"model":"1 Series","next":"/api/v2/vehicles/years/2011/makes/BMW/models/1%20Series/styles/","default_vehicle_id":125448,"default_style":"128i 2dr Coupe","default_vin":"WBAUP7C5BV"},{"model":"3 Series","next":"/api/v2/vehicles/years/2011/makes/BMW/models/3%20Series/styles/","default_vehicle_id":125458,"default_style":"328i 4dr Sedan SA","default_vin":"WBAPH7G5BN"},{"model":"5 Series","next":"/api/v2/vehicles/years/2011/makes/BMW/models/5%20Series/styles/","default_vehicle_id":127155,"default_style":"528i 4dr Sedan","default_vin":"WBAFR1C5BC"},{"model":"7 Series","next":"/api/v2/vehicles/years/2011/makes/BMW/models/7%20Series/styles/","default_vehicle_id":125437,"default_style":"740i 4dr Sedan","default_vin":"WBAKA4C5BC"},{"model":"ActiveE","next":"/api/v2/vehicles/years/2011/makes/BMW/models/ActiveE/styles/","default_vehicle_id":135659,"default_style":"2dr Coupe","default_vin":"WBAUP3C5BV"},{"model":"ActiveHybrid X6","next":"/api/v2/vehicles/years/2011/makes/BMW/models/ActiveHybrid%20X6/styles/","default_vehicle_id":126647,"default_style":"AWD 4dr SUV","default_vin":"5UXFH0C5BL"},{"model":"M3","next":"/api/v2/vehicles/years/2011/makes/BMW/models/M3/styles/","default_vehicle_id":125452,"default_style":"4dr Sedan","default_vin":"WBSPM9C5BE"},{"model":"X3","next":"/api/v2/vehicles/years/2011/makes/BMW/models/X3/styles/","default_vehicle_id":129873,"default_style":"AWD xDrive28i 4dr SUV","default_vin":"5UXWX5C5BL"},{"model":"X5","next":"/api/v2/vehicles/years/2011/makes/BMW/models/X5/styles/","default_vehicle_id":125582,"default_style":"AWD xDrive35i 4dr SUV","default_vin":"5UXZV4C5BL"},{"model":"X5 M","next":"/api/v2/vehicles/years/2011/makes/BMW/models/X5%20M/styles/","default_vehicle_id":126596,"default_style":"AWD 4dr SUV","default_vin":"5YMGY0C5BL"},{"model":"X6","next":"/api/v2/vehicles/years/2011/makes/BMW/models/X6/styles/","default_vehicle_id":126648,"default_style":"AWD xDrive35i 4dr SUV","default_vin":"5UXFG2C5BL"},{"model":"X6 M","next":"/api/v2/vehicles/years/2011/makes/BMW/models/X6%20M/styles/","default_vehicle_id":126646,"default_style":"AWD 4dr SUV","default_vin":"5YMGZ0C5BL"},{"model":"Z4","next":"/api/v2/vehicles/years/2011/makes/BMW/models/Z4/styles/","default_vehicle_id":125434,"default_style":"sDrive30i 2dr Convertible","default_vin":"WBALM5C5BE"}]
-
-            }
+            zebra_questions : null,
         };
     }
     if(action.type === 'STUFF_CHANGED'){
         let newState = state;
-        if (newState[action.data.key]){
-            newState[action.data.key] =  action.data.value;
-        }
+        newState[action.data.key] =  action.data.value;
         return newState;
     }
     return state;
