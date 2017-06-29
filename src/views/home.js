@@ -19,10 +19,11 @@ class Home extends Component {
         super(props);
         this.state = {
             questionIndex : 0,
+            shouldCheck : true,
             parent : store.getState(),
             questions : [
                 {
-                    id : 0,
+                    id : 1,
                     text : 'What gender are you?',
                     type : 'radio',
                     options : [
@@ -30,10 +31,10 @@ class Home extends Component {
                         {id : 2, text : 'Female'}
                     ],
                     icon : 'ion-ios-body-outline',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 1,
+                    id : 2,
                     text : 'When were you born?',
                     type : 'date',
                     options : [
@@ -41,10 +42,10 @@ class Home extends Component {
                         {id : 2, text : 'Female'}
                     ],
                     icon : 'ion-ios-calendar-outline',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 2,
+                    id : 3,
                     text : 'Are you currently insured? If yes, for how long?',
                     type : 'select',
                     options : [
@@ -55,10 +56,10 @@ class Home extends Component {
                         {id : 5, text : 'Not currently insured'},
                     ],
                     icon : 'ion-model-s',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 3,
+                    id : 4,
                     text : 'Whats your credit score',
                     type : 'select',
                     options : [
@@ -67,10 +68,10 @@ class Home extends Component {
                         {id : 3, text : 'Good'}
                     ],
                     icon : 'ion-card',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 4,
+                    id : 5,
                     text : 'Whats your highest level of education?',
                     type : 'select',
                     options : [
@@ -80,10 +81,10 @@ class Home extends Component {
                         {id : 3, text : 'Doctoral degree'}
                     ],
                     icon : 'ion-university',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 5,
+                    id : 6,
                     text : 'Do you own a house or Condo',
                     type : 'radio',
                     options : [
@@ -91,10 +92,10 @@ class Home extends Component {
                         {id : 2, text : 'No'}
                     ],
                     icon : 'ion-ios-home-outline',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 6,
+                    id : 7,
                     text : 'Where do you park your car?',
                     type : 'text',
                     options : [
@@ -102,10 +103,10 @@ class Home extends Component {
                         {id : 2, text : 'No'}
                     ],
                     icon : 'ion-map',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 7,
+                    id : 8,
                     text : 'How Much coverage would you like',
                     type : 'select',
                     options : [
@@ -115,10 +116,10 @@ class Home extends Component {
                         {id : 4, text : 'Best $30k/$60k'}
                     ],
                     icon : 'ion-ios-paper-outline',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 8,
+                    id : 9,
                     text : 'Are you married',
                     type : 'radio',
                     options : [
@@ -126,10 +127,10 @@ class Home extends Component {
                         {id : 2, text : 'No'}
                     ],
                     icon : 'ion-ios-heart-outline',
-                    answer : 1
+                    answer : null
                 },
                 {
-                    id : 9,
+                    id : 10,
                     text : 'Any accidents, tickets, claims or violations in the past 3 years?',
                     type : 'radio',
                     options : [
@@ -137,10 +138,11 @@ class Home extends Component {
                         {id : 2, text : 'No'}
                     ],
                     icon : 'ion-ios-clock-outline',
-                    answer : 1
+                    answer : null
                 }
             ],
-            zebra : null
+            zebra : null,
+            isLoading : false
         };
         this.renderLoader = this.renderLoader.bind(this);
         this.renderQuestion = this.renderQuestion.bind(this);
@@ -166,10 +168,19 @@ class Home extends Component {
     }
     async update(){
         try {
+            this.setState({
+                isLoading : true
+            });
             let updatedResponse = await this.updateZebraRecord();
             let pollResult = await this.keepPolingUntilAResponseExists();
             let fetchResponse = await this.fetchZebraResponse();
+            this.setState({
+                isLoading : false
+            });
         } catch (e){
+            this.setState({
+                isLoading : false
+            });
             alert('Error: '+e.message);
         }
     }
@@ -268,6 +279,7 @@ class Home extends Component {
     }
     handleChange = (event, index, value) => this.setState({value});
     renderLoader(id){
+        id--;
         let rows = [];
         for (let i = 0; i < this.state.questions.length; i++) {
             rows.push(
@@ -281,6 +293,7 @@ class Home extends Component {
         );
     }
     renderQuestion(id){
+        id--;
         if (this.state.questions[id].type === 'select'){
             return this.renderSelect(id);
         } else if (this.state.questions[id].type === 'radio'){
@@ -295,11 +308,21 @@ class Home extends Component {
     answerQuestion(id, val){
         let question = this.state.questions[id];
         question.answer = val;
+        let questionIndex = id+1;
         let questions = this.state.questions;
         questions[id] = question;
+        let a = () => {
+            this.setState({
+                //questions,
+                shouldCheck : false,
+                questionIndex
+            },this.update);
+        };
         this.setState({
             questions
-        }, this.update);
+        }, ()=>{
+            setTimeout(a.bind(this), 500);
+        });
     }
     renderSelect(id){
         let question = this.state.questions[id];
@@ -349,10 +372,13 @@ class Home extends Component {
             <div style={{display:'flex', alignItems:'center', flexDirection:'column'}}>
                 <Icon icon = {question.icon} size="80" style={{fontSize:80, color:'#3498db'}} />
                 <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{question.text}</h4>
-                <div style={{display:'flex'}}>
+                <div>
                     <TextField
                         hintText="Start typing"
                     /><br />
+                    <RaisedButton onTouchTap={()=>{
+                        this.answerQuestion(id, 'holla');
+                    }} label="Continue"/>
                 </div>
             </div>
         );
@@ -364,7 +390,9 @@ class Home extends Component {
                 <Icon icon = {question.icon} size="80" style={{fontSize:80, color:'#3498db'}} />
                 <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{question.text}</h4>
                 <div style={{display:'flex'}}>
-                    <DatePicker hintText="Choose" />
+                    <DatePicker hintText="Choose" onChange={(a,b,c)=>{
+                        this.answerQuestion(id, b);
+                    }} />
                 </div>
             </div>
         );
@@ -391,6 +419,11 @@ class Home extends Component {
         }
     }
     renderEstimates(){
+        if (this.state.isLoading){
+            return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                <CircularProgress color="black" />
+            </div>
+        }
         let zebra = this.state.zebra;
         if (!(zebra && zebra.estimates)){
             return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
@@ -436,15 +469,27 @@ class Home extends Component {
                     </Toolbar>
                 }
                 style={{backgroundColor:'white'}}
-            >
+                    >
                 <div>
                     <div style={{height:'95vh', backgroundColor:'white', 'max-height' : '90vh', overflow:'scroll'}}>
                         <div style={{height:'50vh', padding:10, display:'flex'}}>
-                            <Carousel index={0} swipeable
+                            <Carousel index={this.state.questionIndex} swipeable
                                       onPostChange = {(e)=>{
+                                          let questionIndex = e.activeIndex;// < 0 ? 0 : this.state.questionIndex;
+                                          let question = this.state.questions[questionIndex === 0 ? 0 : questionIndex-1];
                                           this.setState({
                                               questionIndex : e.activeIndex
-                                          }, this.update);
+                                          }, ()=>{
+                                              if (!this.state.shouldCheck){
+                                                  return this.setState({
+                                                      shouldCheck : true
+                                                  });
+                                              }
+                                              this.setState({
+                                                  questionIndex:  question.answer === null ? questionIndex-1 : questionIndex,
+                                                  shouldCheck : false
+                                              });
+                                          });
                                       }}
                                       itemHeight={30} autoScrollRatio={0.4} autoScroll>
                                 {this.state.questions.map(res =>{
