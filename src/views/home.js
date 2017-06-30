@@ -424,7 +424,7 @@ class Home extends Component {
                 <CircularProgress color="black" />
             </div>
         }
-        let zebra = this.state.zebra;
+        let zebra = store.getState().temp_zebra;// //this.state.zebra;
         if (!(zebra && zebra.estimates)){
             return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                 <CircularProgress color="black" />

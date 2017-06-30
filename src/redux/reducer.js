@@ -3,7 +3,8 @@ import {STUFF_CHANGED} from './actions';
 const reducer = function(state, action) {
     if (state === undefined){
         return  {
-            zebra : {
+            zebra : {},
+            temp_zebra : {
                 "accuracy": 80.0,
                 "address": "lakeville, MN 55044",
                 "address2": null,

@@ -143,7 +143,7 @@ class ActionList extends Component {
     }
     proxy = "https://cors-anywhere.herokuapp.com/";
     fetchRecords(){
-        let url = 'https://www.thezebra.com/api/internal/v1/quote/session-based/?fetch=false&ad_src_id=f';
+        let url = 'https://www.thezebra.com/api/internal/v1/quote/session-based/?ad_src_id=f';
         fetch(this.proxy+url, {mode: 'cors'})
             .then(response => {
                 if (response.status >= 200 && response.status < 300) {
@@ -163,97 +163,40 @@ class ActionList extends Component {
     }
     submitForm(){
         let ze = this.state.zebra;
-        let model = JSON.parse(this.state.model);
-        let zebra = {
-            "id": ze.id,
-            "session_id": ze.session_id,
-            "channel_id": ze.channel_id,
-            "subid": null,
-            "subid2": null,
-            "subid3": null,
-            "subid4": null,
-            "subid5": null,
-            "subid6": null,
-            "subid7": null,
-            "keyword": null,
-            "medium": null,
-            "source": null,
-            "buy_quote_ref_id": null,
-            "zipcode": "99144",
-            "city": "Lamona",
-            "state": "WA",
-            "credit_score": null,
-            "currently_insured": null,
-            "prior_carrier": null,
-            "prior_carrier_coverage_months": null,
-            "home_ownership": null,
-            "coverage": 0,
-            "coverage_selected": null,
-            "drivers": [{
-                "age": null,
-                "age_first_licensed": null,
-                "dob": null,
-                "driver_relationship": null,
-                "drivers_training": null,
-                "education": null,
-                "employment": null,
-                "excluded": null,
-                "first_name": null,
-                "gender": 0,
-                "good_student": null,
-                "incidents": [],
-                "incidents_selected": null,
-                "is_student": false,
-                "last_name": null,
-                "marital_status": null,
-                "other_applicable": null,
-                "primary_driver": true,
-                "uuid": null
-            }],
-            "vehicles": [{
-                "collision": null,
-                "comprehensive": null,
-                "garaging_address": null,
-                "has_alarm": null,
-                "make": this.state.make,
-                "miles_per_year": null,
-                "model": model.model,
-                "ownership": null,
-                "primary_use": null,
-                "rental_limit": null,
-                "submodel": model.default_style,
-                "towing_limit": null,
-                "vehicle_display_name": null,
-                "vehicle_id": model.default_vehicle_id,
-                "vin": model.default_vin,
-                "year": this.state.year
-            }],
-            "is_mobile": true,
-            "mobile_driver_count": 1,
-            "mobile_vehicle_count": 1,
-            "has_completed_mdv": false,
-            "ip_address": "197.149.67.66",
-            "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1",
-            "serial_request_id": 1498645588893,
-            "first_name": null,
-            "last_name": null,
-            "phone_number": null,
-            "email": null,
-            "address": null
-        };
-        // console.log(zebra);
+        ze['city'] = "Lamona";
+        ze['zipcode'] = "99144";
+        ze['serial_request_id'] = 1498835458270;
+        ze['state'] = "WA";
+        ze['vehicles'] = [{
+            "collision": null,
+            "comprehensive": null,
+            "garaging_address": null,
+            "has_alarm": null,
+            "make": "Tesla",
+            "miles_per_year": null,
+            "model": "Model S",
+            "ownership": null,
+            "primary_use": null,
+            "rental_limit": null,
+            "submodel": "60 4dr Liftback",
+            "towing_limit": null,
+            "vehicle_display_name": null,
+            "vehicle_id": 263017,
+            "vin": null,
+            "year": 2017
+        }];
         store.dispatch({
             type : 'STUFF_CHANGED',
             data : {
                 key : 'zebra_questions',
-                value : zebra
+                value : ze
             }
         });
         store.dispatch({
             type : 'STUFF_CHANGED',
             data : {
                 key : 'zebra',
-                value : this.state.zebra
+                value : ze
             }
         });
         this.props.navigator.pushPage({

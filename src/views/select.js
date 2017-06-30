@@ -107,21 +107,16 @@ class Select extends Component {
                 }
             />
             <section style={{paddingLeft:10, paddingRight:10, maxHeight:'80vh', overflow:'scroll'}}>
-                {this.state.parent.zebra.estimates.map(res => {
+                {this.state.parent.temp_zebra.estimates.map(res => {
                     return <ListItem
                         longdivider
                         onTouchTap={()=>{
                         }}
                         key={res.carrier_id}>
-                        <div className='left'>
-                            <div>
-                                <img src={res.image} style={{height:50, width:50, borderRadius:6, color:'#91acb9', fontSize:'40px'}} />
-                            </div>
-                        </div>
                         <div className='center'>
                             <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
                                 <p>{res.carrier_display_name}</p>
-                                <p style={{fontSize:'small', marginTop:'-2vh'}}>{res.carrier_description}</p>
+                                <p style={{fontSize:'small', marginTop:'-2vh'}}>{res.carrier_description.substr(0, 200)+'...'}</p>
                             </div>
                         </div>
                         <div className='right'>
