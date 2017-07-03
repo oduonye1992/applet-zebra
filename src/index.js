@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import MainPage from './tabs';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import injectTapEventPlugin from "react-tap-event-plugin";
@@ -13,5 +14,5 @@ if (!window.Promise) {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<MainPage />, document.getElementById('root'));
 registerServiceWorker();

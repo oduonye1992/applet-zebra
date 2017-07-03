@@ -4,7 +4,7 @@
   --material-background-color: white;
   --text-color: #2c3e50;
   --sub-text-color: #999;
-  --highlight-color: rgba(24, 103, 194, 0.81);
+  --highlight-color: #e74c3c;
   --second-highlight-color: #25a6d9;
   --border-color: white;
   --toolbar-background-color: white;
@@ -18,14 +18,14 @@
   --list-tap-active-background-color: #d9d9d9;
   --tabbar-background-color: #fff;
   --tabbar-text-color: #34495e;
-  --tabbar-highlight-text-color: rgba(24, 103, 194, 0.81);
+  --tabbar-highlight-text-color: #e74c3c;
   --tabbar-border-color: white;
   --switch-highlight-color: #5198db;
   --modal-background-color: rgba(0, 0, 0, 0.7);
   --modal-text-color: #fff;
   --alert-dialog-background-color: #f4f4f4;
   --alert-dialog-text-color: #1f1f21;
-  --alert-dialog-button-color: rgba(24, 103, 194, 0.81);
+  --alert-dialog-button-color: #e74c3c;
   --alert-dialog-separator-color: #ddd;
   --dialog-background-color: #f4f4f4;
   --popover-background-color: white;
@@ -64,8 +64,8 @@
   --material-progress-circle-secondary-color: #80cbc4;
   --material-tabbar-background-color: white;
   --material-tabbar-text-color: #2c3e50;
-  --material-tabbar-highlight-text-color: rgba(24, 103, 194, 0.81);
-  --material-tabbar-highlight-color: rgba(24, 103, 194, 0.81);
+  --material-tabbar-highlight-text-color: #e74c3c;
+  --material-tabbar-highlight-color: #e74c3c;
   --fab-text-color: #ffffff;
   --fab-background-color: #009688;
 }

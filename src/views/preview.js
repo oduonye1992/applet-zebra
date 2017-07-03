@@ -236,16 +236,28 @@ class Preview extends Component {
                         {featuredItems.map(res => {
                            return <CarouselItem key={res.id}>
                                <img src={'https://unsplash.it/200/'+(100-Math.floor(Math.random()*50).toFixed(0))} style={{height:'92vh', width:'100vw'}}></img>
+
                                <div style={{ position:'absolute', top:0, height:'92vh', backgroundColor:res.color, opacity:0.9,
-                                   display:'flex', alignItems:'flex-start', flexDirection:'column', justifyContent:'space-between',
                                    width:'100vw'
                                }}>
-                                   <div style={{width:'60vw', display:'flex', paddingLeft:30, paddingRight:30, flexDirection:'column', alignItems:'flex-start'}}>
-                                       <h1 style={{ color:'white'}}>Auto Insurance</h1>
+                                   <div className='left' style={{ height:'5vh', padding:10}}>
+                                       <ToolbarButton onClick={()=>{
+                                           this.props.navigator.popPage();
+                                       }}>
+                                           <Icon icon = "ion-chevron-left" style={{color:'white'}} />
+                                       </ToolbarButton>
                                    </div>
-                                   <div style={{width:'80vw', display:'flex', paddingLeft:30, paddingRight:30, flexDirection:'column', alignItems:'flex-start'}}>
-                                       <h3 style={{color:'white'}}>{res.title}</h3>
-                                       <p style={{color:'white', marginTop:'-3vh', fontSize:'larger'}}>{res.description}</p>
+                                   <div style={{height:'82vh', backgroundColor:res.color, opacity:0.9,
+                                       display:'flex', alignItems:'flex-start', flexDirection:'column', justifyContent:'space-between',
+                                       width:'100vw'
+                                   }}>
+                                       <div style={{width:'60vw', display:'flex', paddingLeft:30, paddingRight:30, flexDirection:'column', alignItems:'flex-start'}}>
+                                           <h1 style={{ color:'white'}}>Auto Insurance</h1>
+                                       </div>
+                                       <div style={{width:'80vw', display:'flex', paddingLeft:30, paddingRight:30, flexDirection:'column', alignItems:'flex-start'}}>
+                                           <h3 style={{color:'white'}}>{res.title}</h3>
+                                           <p style={{color:'white', marginTop:'-3vh', fontSize:'larger'}}>{res.description}</p>
+                                       </div>
                                    </div>
                                </div>
                            </CarouselItem>

@@ -102,7 +102,7 @@ class ActionList extends Component {
                     this.setState({
                         years : res.result,
                         openSnackbar : false,
-                        snackBarMessage : 'Loading cars...'
+                        snackBarMessage : ''
                     });
                 }
             })
@@ -111,7 +111,7 @@ class ActionList extends Component {
     fetchModel(){
         this.setState({
             openSnackbar : true,
-            snackBarMessage : 'Loading cars...'
+            snackBarMessage : 'Loading Models...'
         });
         let url = 'https://www.thezebra.com/api/v2/vehicles/years/'+this.state.year+'/makes/'+this.state.make+'/models/';
         fetch(this.proxy+url, {mode: 'cors'})
@@ -191,29 +191,82 @@ class ActionList extends Component {
     }
     submitForm(){
         let ze = this.state.zebra;
-        ze['city'] = "Lamona";
-        ze['zipcode'] = "99144";
-        ze['serial_request_id'] = 1498835458270;
-        ze['state'] = "WA";
-        ze['vehicles'] = [{
-            "collision": null,
-            "comprehensive": null,
-            "garaging_address": null,
-            "has_alarm": null,
-            "make": "Tesla",
-            "miles_per_year": null,
-            "model": "Model S",
-            "ownership": null,
-            "primary_use": null,
-            "rental_limit": null,
-            "submodel": "60 4dr Liftback",
-            "towing_limit": null,
-            "vehicle_display_name": null,
-            "vehicle_id": 263017,
-            "vin": null,
-            "year": 2017
-        }];
-        let a = {"id":ze.id,"session_id":ze.session_id,"channel_id":"3ACF01","subid":null,"subid2":null,"subid3":null,"subid4":null,"subid5":null,"subid6":null,"subid7":null,"keyword":null,"medium":null,"source":null,"buy_quote_ref_id":null,"zipcode":"99144","city":"Lamona","state":"WA","credit_score":null,"currently_insured":null,"prior_carrier":null,"prior_carrier_coverage_months":null,"home_ownership":null,"coverage":0,"coverage_selected":null,"drivers":[{"age":null,"age_first_licensed":null,"dob":null,"driver_relationship":null,"drivers_training":null,"education":null,"employment":null,"excluded":null,"first_name":null,"gender":null,"good_student":null,"incidents":[],"incidents_selected":null,"is_student":false,"last_name":null,"marital_status":null,"other_applicable":null,"primary_driver":true,"uuid":null}],"vehicles":[{"year":"2016","make":"Acura","model":"MDX","submodel":"4dr SUV","vehicle_id":247652}],"is_mobile":true,"mobile_driver_count":1,"mobile_vehicle_count":1,"has_completed_mdv":false,"ip_address":"197.149.67.66","user_agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1","serial_request_id":1499076515930,"first_name":null,"last_name":null,"phone_number":null,"email":null,"address":null}
+        /*
+         "vehicles": [{
+         "year": this.state.year,
+         "make": this.state.make,
+         "model": model.model,
+         "submodel": model.default_style,
+         "vehicle_id": model.default_vehicle_id
+         }],
+         */
+        let model = JSON.parse(this.state.model);
+        let a = {
+            "id": ze.id,
+            "session_id": ze.session_id,
+            "channel_id": "3ACF01",
+            "subid": null,
+            "subid2": null,
+            "subid3": null,
+            "subid4": null,
+            "subid5": null,
+            "subid6": null,
+            "subid7": null,
+            "keyword": null,
+            "medium": null,
+            "source": null,
+            "buy_quote_ref_id": null,
+            "zipcode": "99144",
+            "city": "Lamona",
+            "state": "WA",
+            "credit_score": null,
+            "currently_insured": null,
+            "prior_carrier": null,
+            "prior_carrier_coverage_months": null,
+            "home_ownership": null,
+            "coverage": 0,
+            "coverage_selected": null,
+            "drivers": [{
+                "age": null,
+                "age_first_licensed": null,
+                "dob": null,
+                "driver_relationship": null,
+                "drivers_training": null,
+                "education": null,
+                "employment": null,
+                "excluded": null,
+                "first_name": null,
+                "gender": null,
+                "good_student": null,
+                "incidents": [],
+                "incidents_selected": null,
+                "is_student": false,
+                "last_name": null,
+                "marital_status": null,
+                "other_applicable": null,
+                "primary_driver": true,
+                "uuid": null
+            }],
+            "vehicles": [{
+                "year": "2016",
+                "make": "Audi",
+                "model": "A4",
+                "submodel": "2.0T Premium 4dr Sedan",
+                "vehicle_id": 251052
+            }],
+            "is_mobile": true,
+            "mobile_driver_count": 1,
+            "mobile_vehicle_count": 1,
+            "has_completed_mdv": false,
+            "ip_address": "197.149.67.66",
+            "user_agent": "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Mobile Safari/537.36",
+            "serial_request_id": 1499099620359,
+            "first_name": null,
+            "last_name": null,
+            "phone_number": null,
+            "email": null,
+            "address": null
+        };
         store.dispatch({
             type : 'STUFF_CHANGED',
             data : {
@@ -392,7 +445,13 @@ class ActionList extends Component {
         return <Page
             renderToolbar={() =>
                 <Toolbar>
-                    <div className='left' style={{backgroundColor:'#9b59b6'}}></div>
+                    <div className='left' style={{backgroundColor:'#9b59b6'}}>
+                        <ToolbarButton onClick={()=>{
+                            this.props.navigator.popPage();
+                        }}>
+                            <Icon icon = "ion-chevron-left" style={{color:'white'}} />
+                        </ToolbarButton>
+                    </div>
                     <div className='center' style={{backgroundColor:'#9b59b6', color:'white'}}>
 
                     </div>
@@ -416,7 +475,7 @@ class ActionList extends Component {
                 }
             />
             <section style={{maxHeight:'90vh', overflow:'scroll'}}>
-                <div style={{height:'34vh', backgroundColor:'#9b59b6', display:'flex',
+                <div style={{height:'25vh', backgroundColor:'#9b59b6', display:'flex',
                     flexDirection:'column', alignItems:'flex-start', padding:20, justifyContent:'flex-end'}}>
                     <h3 style={{color:'white'}}>
                         First, some basic questions

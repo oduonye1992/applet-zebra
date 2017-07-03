@@ -234,7 +234,7 @@ class Splash extends Component {
     }
 
     render(){
-        return <Page>
+        return <Page style={{height:'100vh', position:'absolute', top:0}}>
             <section style={{maxHeight:'100vh', overflow:'scroll'}}>
                 <div style={{height:'30vh'}}>
                     <Carousel style={{height:'30vh'}} index={0} swipeable onPostChange = {(e)=>{}} itemHeight='30vh' autoScrollRatio={0.4} autoScroll >

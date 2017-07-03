@@ -111,6 +111,12 @@ class Select extends Component {
                     return <ListItem
                         longdivider
                         onTouchTap={()=>{
+                            if (window.formelo){
+                                window.formelo().InAppBrowser('https://paystack.com/pay/insuredemo');
+                            } else {
+                                let win = window.open('https://paystack.com/pay/insuredemo', '_blank');
+                                win.focus();
+                            }
                         }}
                         key={res.carrier_id}>
                         <div className='center'>
