@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="884b8745-9de9-4c85-b9f3-2a200a3d7bb0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/actions_list.js" afterPath="$PROJECT_DIR$/src/views/actions_list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/home.js" afterPath="$PROJECT_DIR$/src/views/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/select.js" afterPath="$PROJECT_DIR$/src/views/select.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,10 +20,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
+            <state relative-caret-position="406">
               <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -33,28 +32,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="426" column="20" lean-forward="true" selection-start-line="426" selection-start-column="20" selection-end-line="426" selection-end-column="47" />
+            <state relative-caret-position="574">
+              <caret line="414" column="22" lean-forward="true" selection-start-line="414" selection-start-column="22" selection-end-line="414" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#1001#5525#0" expanded="false" />
                 <element signature="n#!!block;n#parseResponse#0;n#Home#0" expanded="false" />
-                <element signature="n#!!block;n#update#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#buildQueryString#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#keepPolingUntilAResponseExists#0;n#Home#0" expanded="false" />
-                <element signature="n#!!block;n#fetchItem#0;n#Home#0" expanded="false" />
+                <element signature="n#!!block;n#renderLoader#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
+                <element signature="n#!!block;n#answerQuestion#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderSelect#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
+                <element signature="n#!!block;n#renderText#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
                 <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
-                <element signature="e#16234#16450#0" expanded="false" />
-                <element signature="e#16562#16778#0" expanded="false" />
-                <element signature="e#16815#17020#0" expanded="false" />
-                <element signature="e#17938#18600#0" expanded="false" />
+                <element signature="e#16080#16296#0" expanded="false" />
+                <element signature="e#16428#16644#0" expanded="false" />
+                <element signature="e#16681#16886#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
+                <element signature="e#17804#18466#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -87,13 +88,20 @@
       <file leaf-file-name="actions_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="169" column="27" lean-forward="true" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
+            <state relative-caret-position="362">
+              <caret line="218" column="20" lean-forward="true" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <element signature="n#!!block;n#fetchZipCodeStatus#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#fetchYear#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#fetchModel#0;n#ActionList#0" expanded="false" />
                 <element signature="n#!!block;n#fetchMake#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#logError#0;n#ActionList#0" expanded="false" />
+                <element signature="e#7060#7604#0" expanded="false" />
+                <element signature="n#!!block;n#subscribe#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderPackage#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderProducts#0;n#ActionList#0" expanded="false" />
+                <element signature="n#!!block;n#renderContract#0;n#ActionList#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,10 +110,9 @@
       <file leaf-file-name="splash.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/splash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="182" column="5" lean-forward="false" selection-start-line="182" selection-start-column="5" selection-end-line="182" selection-end-column="5" />
+            <state relative-caret-position="290">
+              <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#1079#1758#0" expanded="false" />
                 <element signature="e#1155#1752#0" expanded="false" />
                 <element signature="e#1764#2477#0" expanded="false" />
@@ -113,13 +120,11 @@
                 <element signature="e#3170#3727#0" expanded="false" />
                 <element signature="e#3747#4962#0" expanded="false" />
                 <element signature="n#!!block;n#constructor#0;n#Splash#0" expanded="false" />
-                <element signature="n#!!block;n#getChildContext#0;n#Splash#0" expanded="false" />
                 <element signature="n#!!block;n#componentDidMount#0;n#Splash#0" expanded="false" />
                 <element signature="n#!!block;n#fetchRecords#0;n#Splash#0" expanded="false" />
                 <element signature="n#!!block;n#subscribe#0;n#Splash#0" expanded="false" />
                 <element signature="n#!!block;n#convertObjToArray#0;n#Splash#0" expanded="false" />
                 <element signature="n#!!block;n#convertArrayToObj#0;n#Splash#0" expanded="false" />
-                <element signature="n#!!block;n#render#0;n#Splash#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -129,7 +134,7 @@
         <entry file="file://$PROJECT_DIR$/src/views/select.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="783">
-              <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+              <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#675#2436#0" expanded="false" />
@@ -156,7 +161,7 @@
         <entry file="file://$PROJECT_DIR$/src/redux/reducer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="232">
-              <caret line="905" column="10" lean-forward="true" selection-start-line="905" selection-start-column="10" selection-end-line="905" selection-end-column="10" />
+              <caret line="905" column="10" lean-forward="false" selection-start-line="905" selection-start-column="10" selection-end-line="905" selection-end-column="10" />
               <folding>
                 <element signature="e#181#59639#0" expanded="false" />
                 <element signature="e#345#16902#0" expanded="false" />
@@ -205,6 +210,7 @@
       <find>ss</find>
       <find>anser</find>
       <find>alert</find>
+      <find>submitfo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -225,11 +231,11 @@
         <option value="$PROJECT_DIR$/a.php" />
         <option value="$PROJECT_DIR$/src/views/preview.js" />
         <option value="$PROJECT_DIR$/src/views/splash.js" />
-        <option value="$PROJECT_DIR$/src/views/actions_list.js" />
         <option value="$PROJECT_DIR$/src/redux/reducer.js" />
-        <option value="$PROJECT_DIR$/src/views/home.js" />
         <option value="$PROJECT_DIR$/src/views/select.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/views/actions_list.js" />
+        <option value="$PROJECT_DIR$/src/views/home.js" />
       </list>
     </option>
   </component>
@@ -324,7 +330,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="ap&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;ho&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;action&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;acti&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;redu&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;splas&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ap&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;ho&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;action&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;acti&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;redu&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -407,12 +413,12 @@
       <option name="presentableId" value="Default" />
       <updated>1497884255996</updated>
       <workItem from="1497884258370" duration="66458000" />
-      <workItem from="1498652146115" duration="30218000" />
+      <workItem from="1498652146115" duration="32341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96676000" />
+    <option name="totallyTimeSpent" value="98799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1129" extended-state="0" />
@@ -469,19 +475,21 @@
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#1001#5525#0" expanded="false" />
             <element signature="n#!!block;n#parseResponse#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#update#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#buildQueryString#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#keepPolingUntilAResponseExists#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#fetchItem#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderLoader#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#answerQuestion#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#renderSelect#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderText#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
-            <element signature="e#16234#16450#0" expanded="false" />
-            <element signature="e#16562#16778#0" expanded="false" />
-            <element signature="e#16815#17020#0" expanded="false" />
-            <element signature="e#17938#18600#0" expanded="false" />
+            <element signature="e#16080#16296#0" expanded="false" />
+            <element signature="e#16428#16644#0" expanded="false" />
+            <element signature="e#16681#16886#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
+            <element signature="e#17804#18466#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -512,9 +520,16 @@
           <caret line="357" column="25" lean-forward="true" selection-start-line="357" selection-start-column="25" selection-end-line="357" selection-end-column="25" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="n#!!block;n#fetchZipCodeStatus#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#fetchYear#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#fetchModel#0;n#ActionList#0" expanded="false" />
             <element signature="n#!!block;n#fetchMake#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#logError#0;n#ActionList#0" expanded="false" />
+            <element signature="e#7060#7604#0" expanded="false" />
+            <element signature="n#!!block;n#subscribe#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderPackage#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderProducts#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderContract#0;n#ActionList#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -524,7 +539,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
             <element signature="e#1079#1758#0" expanded="false" />
             <element signature="e#1155#1752#0" expanded="false" />
             <element signature="e#1764#2477#0" expanded="false" />
@@ -532,13 +546,11 @@
             <element signature="e#3170#3727#0" expanded="false" />
             <element signature="e#3747#4962#0" expanded="false" />
             <element signature="n#!!block;n#constructor#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#getChildContext#0;n#Splash#0" expanded="false" />
             <element signature="n#!!block;n#componentDidMount#0;n#Splash#0" expanded="false" />
             <element signature="n#!!block;n#fetchRecords#0;n#Splash#0" expanded="false" />
             <element signature="n#!!block;n#subscribe#0;n#Splash#0" expanded="false" />
             <element signature="n#!!block;n#convertObjToArray#0;n#Splash#0" expanded="false" />
             <element signature="n#!!block;n#convertArrayToObj#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#Splash#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -658,47 +670,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/splash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="182" column="5" lean-forward="false" selection-start-line="182" selection-start-column="5" selection-end-line="182" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#1079#1758#0" expanded="false" />
-            <element signature="e#1155#1752#0" expanded="false" />
-            <element signature="e#1764#2477#0" expanded="false" />
-            <element signature="e#2483#3144#0" expanded="false" />
-            <element signature="e#3170#3727#0" expanded="false" />
-            <element signature="e#3747#4962#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#getChildContext#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#fetchRecords#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#subscribe#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#convertObjToArray#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#convertArrayToObj#0;n#Splash#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#Splash#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="169" column="27" lean-forward="true" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="n#!!block;n#fetchYear#0;n#ActionList#0" expanded="false" />
-            <element signature="n#!!block;n#fetchModel#0;n#ActionList#0" expanded="false" />
-            <element signature="n#!!block;n#fetchMake#0;n#ActionList#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="905" column="10" lean-forward="true" selection-start-line="905" selection-start-column="10" selection-end-line="905" selection-end-column="10" />
+          <caret line="905" column="10" lean-forward="false" selection-start-line="905" selection-start-column="10" selection-end-line="905" selection-end-column="10" />
           <folding>
             <element signature="e#181#59639#0" expanded="false" />
             <element signature="e#345#16902#0" expanded="false" />
@@ -707,35 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="426" column="20" lean-forward="true" selection-start-line="426" selection-start-column="20" selection-end-line="426" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#1001#5525#0" expanded="false" />
-            <element signature="n#!!block;n#parseResponse#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#update#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#buildQueryString#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#keepPolingUntilAResponseExists#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#fetchItem#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderSelect#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
-            <element signature="e#16234#16450#0" expanded="false" />
-            <element signature="e#16562#16778#0" expanded="false" />
-            <element signature="e#16815#17020#0" expanded="false" />
-            <element signature="e#17938#18600#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/select.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="783">
-          <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+          <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#675#2436#0" expanded="false" />
@@ -745,12 +695,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/splash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <folding>
+            <element signature="e#1079#1758#0" expanded="false" />
+            <element signature="e#1155#1752#0" expanded="false" />
+            <element signature="e#1764#2477#0" expanded="false" />
+            <element signature="e#2483#3144#0" expanded="false" />
+            <element signature="e#3170#3727#0" expanded="false" />
+            <element signature="e#3747#4962#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#fetchRecords#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#subscribe#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#convertObjToArray#0;n#Splash#0" expanded="false" />
+            <element signature="n#!!block;n#convertArrayToObj#0;n#Splash#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
+        <state relative-caret-position="406">
           <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/actions_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="218" column="20" lean-forward="true" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="n#!!block;n#fetchZipCodeStatus#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#fetchYear#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#fetchModel#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#fetchMake#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#logError#0;n#ActionList#0" expanded="false" />
+            <element signature="e#7060#7604#0" expanded="false" />
+            <element signature="n#!!block;n#subscribe#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderPackage#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderProducts#0;n#ActionList#0" expanded="false" />
+            <element signature="n#!!block;n#renderContract#0;n#ActionList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="414" column="22" lean-forward="true" selection-start-line="414" selection-start-column="22" selection-end-line="414" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#1001#5525#0" expanded="false" />
+            <element signature="n#!!block;n#parseResponse#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#buildQueryString#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#keepPolingUntilAResponseExists#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderLoader#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#answerQuestion#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderSelect#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderText#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
+            <element signature="e#16080#16296#0" expanded="false" />
+            <element signature="e#16428#16644#0" expanded="false" />
+            <element signature="e#16681#16886#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
+            <element signature="e#17804#18466#0" expanded="false" />
           </folding>
         </state>
       </provider>

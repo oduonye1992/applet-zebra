@@ -22,6 +22,7 @@ class ActionList extends Component {
             openSnackbar : false,
             snackBarMessage : '',
             openActionMessage : '',
+            zip_code : '',
             current_number_of_users : 0,
             current_estimate_for : null,
             current_package_level : null,
@@ -44,6 +45,33 @@ class ActionList extends Component {
         this.fetchMake = this.fetchMake.bind(this);
         this.logError = this.logError.bind(this);
         this.submitForm = this.submitForm.bind(this);
+        this.fetchZipCodeStatus =  this.fetchZipCodeStatus.bind(this);
+    }
+    fetchZipCodeStatus(){
+        return new Promise((resolve, reject) => {
+            let url = "https://www.thezebra.com/api/v2/zipcodes/"+this.state.zip_code;
+            fetch(this.proxy+url, {mode: 'cors'})
+                .then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    } else {
+                        let error = new Error(response.statusText);
+                        error.response = response;
+                        throw error;
+                    }
+                })
+                .then(res => {
+                    store.dispatch({
+                        type : 'STUFF_CHANGED',
+                        data : {
+                            key : 'zebra_questions_meta',
+                            value : res
+                        }
+                    });
+                    resolve();
+                })
+                .catch(reject)
+        });
     }
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
@@ -137,7 +165,7 @@ class ActionList extends Component {
     logError(e){
         this.setState({
             openSnackbar : true,
-            snackBarMessage : 'Loading cars...'
+            snackBarMessage : 'An error has occured'
         });
         alert(e.message);
     }
@@ -185,11 +213,12 @@ class ActionList extends Component {
             "vin": null,
             "year": 2017
         }];
+        let a = {"id":ze.id,"session_id":ze.session_id,"channel_id":"3ACF01","subid":null,"subid2":null,"subid3":null,"subid4":null,"subid5":null,"subid6":null,"subid7":null,"keyword":null,"medium":null,"source":null,"buy_quote_ref_id":null,"zipcode":"99144","city":"Lamona","state":"WA","credit_score":null,"currently_insured":null,"prior_carrier":null,"prior_carrier_coverage_months":null,"home_ownership":null,"coverage":0,"coverage_selected":null,"drivers":[{"age":null,"age_first_licensed":null,"dob":null,"driver_relationship":null,"drivers_training":null,"education":null,"employment":null,"excluded":null,"first_name":null,"gender":null,"good_student":null,"incidents":[],"incidents_selected":null,"is_student":false,"last_name":null,"marital_status":null,"other_applicable":null,"primary_driver":true,"uuid":null}],"vehicles":[{"year":"2016","make":"Acura","model":"MDX","submodel":"4dr SUV","vehicle_id":247652}],"is_mobile":true,"mobile_driver_count":1,"mobile_vehicle_count":1,"has_completed_mdv":false,"ip_address":"197.149.67.66","user_agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1","serial_request_id":1499076515930,"first_name":null,"last_name":null,"phone_number":null,"email":null,"address":null}
         store.dispatch({
             type : 'STUFF_CHANGED',
             data : {
                 key : 'zebra_questions',
-                value : ze
+                value : a
             }
         });
         store.dispatch({

@@ -166,6 +166,18 @@ class Home extends Component {
             throw error;
         }
     }
+    buildQueryString(paramsObj){
+        let queryString = '?q=q';
+        if (!paramsObj){
+            return queryString;
+        }
+        for(let key in paramsObj) {
+            if (paramsObj[key] !== undefined){
+                queryString += '&'+key+'='+paramsObj[key];
+            }
+        }
+        return queryString;
+    }
     async update(){
         try {
             this.setState({
@@ -183,18 +195,6 @@ class Home extends Component {
             });
             alert('Error: '+e.message);
         }
-    }
-    buildQueryString(paramsObj){
-        let queryString = '?q=q';
-        if (!paramsObj){
-            return queryString;
-        }
-        for(let key in paramsObj) {
-            if (paramsObj[key] !== undefined){
-                queryString += '&'+key+'='+paramsObj[key];
-            }
-        }
-        return queryString;
     }
     updateZebraRecord(){
         return new Promise((resolve, reject) => {
@@ -272,12 +272,6 @@ class Home extends Component {
                 })
         });
     }
-    fetchItem(){
-        return new Promise((resolve, reject) => {
-
-        });
-    }
-    handleChange = (event, index, value) => this.setState({value});
     renderLoader(id){
         id--;
         let rows = [];
@@ -424,7 +418,7 @@ class Home extends Component {
                 <CircularProgress color="black" />
             </div>
         }
-        let zebra = store.getState().temp_zebra;// //this.state.zebra;
+        let zebra = this.state.zebra;// store.getState().temp_zebra;// //this.state.zebra;
         if (!(zebra && zebra.estimates)){
             return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                 <CircularProgress color="black" />
