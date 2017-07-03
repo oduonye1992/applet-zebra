@@ -17,7 +17,7 @@ class App extends Component {
   render() {
       return (
           <Navigator
-              initialRoute={{component: ActionList}}
+              initialRoute={{component: Splash}}
               animation = "slide"
               animationOptions={{duration: 0.2, timing: 'ease-in'}}
               renderPage={this.renderPage.bind(this)} />
