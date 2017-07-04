@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="884b8745-9de9-4c85-b9f3-2a200a3d7bb0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/home.js" afterPath="$PROJECT_DIR$/src/views/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/select.js" afterPath="$PROJECT_DIR$/src/views/select.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,13 +21,25 @@
     <splitter split-orientation="horizontal" split-proportion="0.62673056">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="tabs.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/tabs.js">
+          <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/views/home.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+                <state relative-caret-position="474">
+                  <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
                   <folding>
-                    <element signature="e#0#26#0" expanded="true" />
+                    <element signature="e#1001#5525#0" expanded="false" />
+                    <element signature="n#!!block;n#parseResponse#0;n#Home#0" expanded="false" />
+                    <element signature="n#!!block;n#buildQueryString#0;n#Home#0" expanded="false" />
+                    <element signature="n#!!block;n#keepPolingUntilAResponseExists#0;n#Home#0" expanded="false" />
+                    <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
+                    <element signature="n#!!block;n#answerQuestion#0;n#Home#0" expanded="false" />
+                    <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
+                    <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
+                    <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
+                    <element signature="e#16083#16299#0" expanded="false" />
+                    <element signature="e#16431#16647#0" expanded="false" />
+                    <element signature="e#16684#16889#0" expanded="false" />
+                    <element signature="e#17807#18469#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -35,8 +48,8 @@
           <file leaf-file-name="select.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/select.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="313">
-                  <caret line="115" column="40" lean-forward="true" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
+                <state relative-caret-position="400">
+                  <caret line="123" column="38" lean-forward="true" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                     <element signature="e#675#2436#0" expanded="false" />
@@ -126,11 +139,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/index.css">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="348">
-                  <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+                <state relative-caret-position="290">
+                  <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -208,7 +221,6 @@
       <find>GET QUO</find>
       <find>ss</find>
       <find>anser</find>
-      <find>alert</find>
       <find>submitfo</find>
       <find>first</find>
       <find>tool</find>
@@ -222,6 +234,7 @@
       <find>file</find>
       <find>verify</find>
       <find>ver</find>
+      <find>alert</find>
     </findStrings>
     <replaceStrings>
       <replace>#e74c3c</replace>
@@ -240,11 +253,9 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/redux/store.js" />
         <option value="$PROJECT_DIR$/a.php" />
-        <option value="$PROJECT_DIR$/src/views/home.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/views/main.js" />
         <option value="$PROJECT_DIR$/src/bottom.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/views/splash.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/views/preview.js" />
@@ -260,7 +271,9 @@
         <option value="$PROJECT_DIR$/src/views/claims/claim_add.js" />
         <option value="$PROJECT_DIR$/src/views/claims/claim_view.js" />
         <option value="$PROJECT_DIR$/src/redux/reducer.js" />
+        <option value="$PROJECT_DIR$/src/views/home.js" />
         <option value="$PROJECT_DIR$/src/views/select.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
       </list>
     </option>
   </component>
@@ -450,7 +463,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;store&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/store.js&#10;sele&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;claima&#9;null&#9;null&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/config/settings.js&#10;cl&#9;null&#9;null&#10;claim&#9;null&#9;null&#10;redu&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;verti&#9;ACTION&#9;SplitVertically&#10;ho&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;pol&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/policy/policy_list.js&#10;cla&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/claims/claim_add.js&#10;main&#9;null&#9;null&#10;mai&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.css&#10;splash&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ta&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;action&#9;null&#9;null&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;tab&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ap&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;splas&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;acti&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;sele&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;store&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/store.js&#10;claima&#9;null&#9;null&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/config/settings.js&#10;cl&#9;null&#9;null&#10;claim&#9;null&#9;null&#10;redu&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;verti&#9;ACTION&#9;SplitVertically&#10;ho&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;pol&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/policy/policy_list.js&#10;cla&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/claims/claim_add.js&#10;main&#9;null&#9;null&#10;mai&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;splash&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ta&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;action&#9;null&#9;null&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;tab&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ap&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;splas&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;acti&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -537,12 +550,12 @@
       <updated>1497884255996</updated>
       <workItem from="1497884258370" duration="66458000" />
       <workItem from="1498652146115" duration="34854000" />
-      <workItem from="1499092731718" duration="31254000" />
+      <workItem from="1499092731718" duration="32487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132566000" />
+    <option name="totallyTimeSpent" value="133799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="23" width="1920" height="1129" extended-state="0" />
@@ -609,11 +622,11 @@
             <element signature="n#!!block;n#renderText#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
             <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
-            <element signature="e#16080#16296#0" expanded="false" />
-            <element signature="e#16428#16644#0" expanded="false" />
-            <element signature="e#16681#16886#0" expanded="false" />
+            <element signature="e#16083#16299#0" expanded="false" />
+            <element signature="e#16431#16647#0" expanded="false" />
+            <element signature="e#16684#16889#0" expanded="false" />
             <element signature="n#!!block;n#render#0;n#Home#0" expanded="false" />
-            <element signature="e#17804#18466#0" expanded="false" />
+            <element signature="e#17807#18469#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -763,16 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/preview.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -879,28 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="340" column="5" lean-forward="true" selection-start-line="340" selection-start-column="5" selection-end-line="340" selection-end-column="5" />
-          <folding>
-            <element signature="e#1001#5525#0" expanded="false" />
-            <element signature="n#!!block;n#parseResponse#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#buildQueryString#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#keepPolingUntilAResponseExists#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#answerQuestion#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
-            <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
-            <element signature="e#16080#16296#0" expanded="false" />
-            <element signature="e#16428#16644#0" expanded="false" />
-            <element signature="e#16681#16886#0" expanded="false" />
-            <element signature="e#17804#18466#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/claims/claim_list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -970,10 +951,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="197" column="5" lean-forward="true" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+          <folding>
+            <element signature="e#1001#5525#0" expanded="false" />
+            <element signature="n#!!block;n#parseResponse#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#buildQueryString#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#keepPolingUntilAResponseExists#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderQuestion#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#answerQuestion#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderRadio#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderDate#0;n#Home#0" expanded="false" />
+            <element signature="n#!!block;n#renderBottom#0;n#Home#0" expanded="false" />
+            <element signature="e#16083#16299#0" expanded="false" />
+            <element signature="e#16431#16647#0" expanded="false" />
+            <element signature="e#16684#16889#0" expanded="false" />
+            <element signature="e#17807#18469#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/select.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="115" column="40" lean-forward="true" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
+        <state relative-caret-position="400">
+          <caret line="123" column="38" lean-forward="true" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#675#2436#0" expanded="false" />

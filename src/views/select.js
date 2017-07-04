@@ -118,7 +118,13 @@ class Select extends Component {
                                 }
                             });
                             if (window.formelo){
-                                window.formelo.InAppBrowser('https://paystack.com/pay/insuredemo');
+                                window.formelo.InAppBrowser('https://paystack.com/pay/insuredemo', {})
+                                    .then(res=>{
+
+                                    })
+                                    .then(e => {
+
+                                    });
                             } else {
                                 let win = window.open('https://paystack.com/pay/insuredemo', '_blank');
                                 win.focus();

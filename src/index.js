@@ -14,5 +14,9 @@ if (!window.Promise) {
 }
 
 
-ReactDOM.render(<MainPage />, document.getElementById('root'));
+document.addEventListener('deviceReady', ()=>{
+    //alert('ssd');
+    ReactDOM.render(<MainPage />, document.getElementById('root'));
+});
+//ReactDOM.render(<MainPage />, document.getElementById('root'));
 registerServiceWorker();

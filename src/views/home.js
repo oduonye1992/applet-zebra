@@ -193,7 +193,7 @@ class Home extends Component {
             this.setState({
                 isLoading : false
             });
-            alert('Error: '+e.message);
+            // alert('Error: '+e.message);
         }
     }
     updateZebraRecord(){
