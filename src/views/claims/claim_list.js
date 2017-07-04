@@ -25,6 +25,17 @@ class ClaimList extends Component {
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
     }
+    componentDidMount(){
+        this.subscribe();
+    }
+    subscribe(){
+        let that =  this;
+        store.subscribe(()=>{
+            that.setState({
+                parent : store.getState()
+            });
+        })
+    }
     claim_list = [
         {
             title : 'Auto Insurance claim',
@@ -104,34 +115,46 @@ class ClaimList extends Component {
                 }
             />
             <section style={{paddingLeft:10, paddingRight:10, maxHeight:'80vh', overflow:'scroll'}}>
-                {this.claim_list.map(res => {
-                    return <ListItem
-                        style={{borderBottom:'1px solid #ecf0f1', margin:0}}
-                        longdivider
-                        onTouchTap={()=>{
-                            this.props.navigator.pushPage({
-                                component : ClaimView,
-                                props : {
-                                    selected : res
-                                }
-                            });
-                        }}
-                        key={res.carrier_id}>
-                        <div className='center'>
-                            <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
-                                <p>{res.title}</p>
-                                <p style={{fontSize:'small', marginTop:'-2vh', color:'#7f8c8d'}}>{res.date}</p>
-                            </div>
-                        </div>
-                        <div className='right'>
-                            <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-                                <Icon icon="ion-record" size = "20" style={{fontSize:20, color:this.claimColorMap[res.status]}} />
-                            </div>
-                        </div>
-                    </ListItem>
-                })}
+                {this.renderMode()}
             </section>
         </Page>
+    }
+    renderMode(){
+        if (!this.state.parent.claims.length){
+            return <div style={{height:'80vh', display:'flex', flexDirection:'column',alignItems:'center', justifyContent:'center'}}>
+                <Icon icon ="ion-ios-medkit-outline" size = "40" style={{fontSize:40}} />
+                <p>No Claims Available Yet</p>
+            </div>
+        } else {
+            return <div>
+            {this.state.parent.claims.map(res => {
+                return <ListItem
+                    style={{borderBottom:'1px solid #ecf0f1', margin:0}}
+                    longdivider
+                    onTouchTap={()=>{
+                        this.props.navigator.pushPage({
+                            component : ClaimView,
+                            props : {
+                                selected : res
+                            }
+                        });
+                    }}
+                    key={res.carrier_id}>
+                    <div className='center'>
+                        <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
+                            <p>{res.claim_type}</p>
+                            <p style={{fontSize:'small', marginTop:'-2vh', color:'#7f8c8d'}}>{res.status}</p>
+                        </div>
+                    </div>
+                    <div className='right'>
+                        <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                            <Icon icon="ion-record" size = "20" style={{fontSize:20, color:this.claimColorMap[res.status]}} />
+                        </div>
+                    </div>
+                </ListItem>
+            })}
+            </div>
+        }
     }
 }
 

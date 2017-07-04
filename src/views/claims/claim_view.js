@@ -12,6 +12,7 @@ import Home from '../home';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
+import Settings from '../../config/settings';
 
 import {Tabs, Tab} from 'material-ui/Tabs';
 
@@ -32,6 +33,7 @@ class ClaimView extends Component {
             parent : store.getState()
         }
     }
+    questions = Settings.questions;
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
     }
@@ -57,6 +59,8 @@ class ClaimView extends Component {
     };
     render(){
         let selected = this.props.selected;
+        // alert(JSON.stringify(selected));
+        let container = this;
         return <Page
             renderToolbar={() =>
                 <Toolbar>
@@ -138,7 +142,7 @@ class ClaimView extends Component {
                             </div>
                             <div className='right'>
                                 <div>
-                                    <Icon size="20" icon ="ion-load-a" style={{fontSize:20, color:'#7f8c8d'}} />
+                                    <Icon size="20" icon ="ion-record" style={{fontSize:20, color:'#f39c12'}} />
                                 </div>
                             </div>
                         </ListItem>
@@ -157,7 +161,7 @@ class ClaimView extends Component {
                             </div>
                             <div className='right'>
                                 <div>
-                                    <Icon size="20" icon ="ion-load-a" style={{fontSize:20, color:'#7f8c8d'}} />
+                                    <Icon size="20" icon ="ion-record" style={{fontSize:20, color:'#7f8c8d'}} />
                                 </div>
                             </div>
                         </ListItem>
@@ -176,79 +180,24 @@ class ClaimView extends Component {
                             </div>
                             <div className='right'>
                                 <div>
-                                    <Icon size="20" icon ="ion-load-a" style={{fontSize:20, color:'#7f8c8d'}} />
+                                    <Icon size="20" icon ="ion-record" style={{fontSize:20, color:'#7f8c8d'}} />
                                 </div>
                             </div>
                         </ListItem>
                     </div>
                 </Tab>
                 <Tab label="Details" value="a" style={{backgroundColor:this.claimColorMap[selected.status], textTransform:'inherit'}}>
-                    <div style={{backgroundColor:'#ecf0f12', height:'80vh', maxHeight:'70vh', overflow:'scroll'}}>
-                        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-                            <CardHeader
-                                title="Details of Insured"
-                                actAsExpander={true}
-                            />
-                            <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
-                            <CardText expandable={true}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                            </CardText>
-                        </Card>
-                        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-                            <CardHeader
-                                title="Loss details"
-                                actAsExpander={true}
-                            />
-                            <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
-                            <CardText expandable={true}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                            </CardText>
-                        </Card>
-                        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-                            <CardHeader
-                                title="Details of Driver at the time of accident"
-                                actAsExpander={true}
-                            />
-                            <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
-                            <CardText expandable={true}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                            </CardText>
-                        </Card>
-                        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-                            <CardHeader
-                                title="Details of Injury and Police report"
-                                actAsExpander={true}
-                            />
-                            <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
-                            <CardText expandable={true}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                            </CardText>
-                        </Card>
-                        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-                            <CardHeader
-                                title="Additional details"
-                                actAsExpander={true}
-                            />
-                            <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
-                            <CardText expandable={true}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                            </CardText>
-                        </Card>
+                    <div style={{backgroundColor:'#ecf0f12', height:'80vh', padding:10, maxHeight:'70vh', overflow:'scroll'}}>
+                        {this.questions.map(cat => {
+                            return <div>
+                                    {cat.items.map(question => {
+                                        return <div style={{borderBottom:'1px solid #ecf0f1'}}>
+                                            <h5>{question.title}</h5>
+                                            <p>{selected[question.key] || 'Not specified'}</p>
+                                        </div>
+                                    })}
+                            </div>
+                        })}
                     </div>
                 </Tab>
             </Tabs>
