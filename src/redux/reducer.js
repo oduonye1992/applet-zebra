@@ -903,7 +903,8 @@ const reducer = function(state, action) {
                 "zipcode": "55044"
             },
             zebra_questions : null,
-            claims : []
+            claims : [],
+            policies : []
         };
     }
     if(action.type === 'STUFF_CHANGED'){
@@ -914,6 +915,11 @@ const reducer = function(state, action) {
     if(action.type === 'NEW_CLAIM'){
         let newState = state;
         newState.claims.push(action.data.value);
+        return newState;
+    }
+    if(action.type === 'NEW_POLICY'){
+        let newState = state;
+        newState.policies.push(action.data.value);
         return newState;
     }
     return state;
