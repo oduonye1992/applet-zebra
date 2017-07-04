@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="884b8745-9de9-4c85-b9f3-2a200a3d7bb0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config/settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/claims/claim_add.js" afterPath="$PROJECT_DIR$/src/views/claims/claim_add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/claims/claim_list.js" afterPath="$PROJECT_DIR$/src/views/claims/claim_list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/claims/claim_view.js" afterPath="$PROJECT_DIR$/src/views/claims/claim_view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/select.js" afterPath="$PROJECT_DIR$/src/views/select.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,11 +31,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="select.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="select.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/select.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="632">
-                  <caret line="129" column="126" lean-forward="true" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="126" />
+                <state relative-caret-position="226">
+                  <caret line="115" column="36" lean-forward="true" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                     <element signature="e#675#2436#0" expanded="false" />
@@ -51,11 +46,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="claim_view.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="claim_view.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/views/claims/claim_view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="472">
-                  <caret line="144" column="100" lean-forward="false" selection-start-line="144" selection-start-column="100" selection-end-line="144" selection-end-column="100" />
+                <state relative-caret-position="356">
+                  <caret line="140" column="38" lean-forward="true" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                     <element signature="e#9395#9901#0" expanded="false" />
@@ -225,6 +220,7 @@
       <find>red</find>
       <find>file</find>
       <find>verify</find>
+      <find>ver</find>
     </findStrings>
     <replaceStrings>
       <replace>#e74c3c</replace>
@@ -251,7 +247,6 @@
         <option value="$PROJECT_DIR$/src/views/splash.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/views/preview.js" />
-        <option value="$PROJECT_DIR$/src/views/select.js" />
         <option value="$PROJECT_DIR$/src/views/actions_list.js" />
         <option value="$PROJECT_DIR$/src/views/claim_view.js" />
         <option value="$PROJECT_DIR$/src/tabs.js" />
@@ -264,6 +259,7 @@
         <option value="$PROJECT_DIR$/src/views/claims/claim_list.js" />
         <option value="$PROJECT_DIR$/src/views/claims/claim_add.js" />
         <option value="$PROJECT_DIR$/src/views/claims/claim_view.js" />
+        <option value="$PROJECT_DIR$/src/views/select.js" />
       </list>
     </option>
   </component>
@@ -453,7 +449,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/claims/claim_view.js&#10;claima&#9;null&#9;null&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/config/settings.js&#10;cl&#9;null&#9;null&#10;claim&#9;null&#9;null&#10;redu&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;verti&#9;ACTION&#9;SplitVertically&#10;ho&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;pol&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/policy/policy_list.js&#10;cla&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/claims/claim_add.js&#10;main&#9;null&#9;null&#10;mai&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.css&#10;splash&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ta&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;action&#9;null&#9;null&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;sele&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;tab&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ap&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;splas&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;acti&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="sele&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;claima&#9;null&#9;null&#10;se&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/config/settings.js&#10;cl&#9;null&#9;null&#10;claim&#9;null&#9;null&#10;redu&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;verti&#9;ACTION&#9;SplitVertically&#10;ho&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;pol&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/policy/policy_list.js&#10;cla&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/claims/claim_add.js&#10;main&#9;null&#9;null&#10;mai&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;sel&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/select.js&#10;inde&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.css&#10;splash&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ta&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;hom&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/home.js&#10;action&#9;null&#9;null&#10;act&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;pre&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;tab&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/tabs.js&#10;spl&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;ap&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;splas&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/splash.js&#10;red&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;ac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;a&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/App.js&#10;acti&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;previ&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/preview.js&#10;pa&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json&#10;in&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;re&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/redux/reducer.js&#10;index&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/index.js&#10;actio&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/src/views/actions_list.js&#10;pac&#9;FILE&#9;file:///Users/daniel/Documents/Daniel/Work/Archive/applets/zebra/package.json" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -540,16 +536,16 @@
       <updated>1497884255996</updated>
       <workItem from="1497884258370" duration="66458000" />
       <workItem from="1498652146115" duration="34854000" />
-      <workItem from="1499092731718" duration="30273000" />
+      <workItem from="1499092731718" duration="31114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131585000" />
+    <option name="totallyTimeSpent" value="132426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="23" width="1920" height="1129" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15495208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -559,7 +555,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297975" sideWeight="0.4976651" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297975" sideWeight="0.4976651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -838,19 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="129" column="126" lean-forward="true" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="126" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#675#2436#0" expanded="false" />
-            <element signature="n#!!block;n#getChildContext#0;n#Select#0" expanded="false" />
-            <element signature="e#3540#4046#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tabs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -977,11 +960,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/claims/claim_view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="144" column="100" lean-forward="false" selection-start-line="144" selection-start-column="100" selection-end-line="144" selection-end-column="100" />
+        <state relative-caret-position="356">
+          <caret line="140" column="38" lean-forward="true" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#9395#9901#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="115" column="36" lean-forward="true" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#675#2436#0" expanded="false" />
+            <element signature="n#!!block;n#getChildContext#0;n#Select#0" expanded="false" />
+            <element signature="e#3540#4046#0" expanded="false" />
           </folding>
         </state>
       </provider>
