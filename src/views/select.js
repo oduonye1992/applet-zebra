@@ -11,7 +11,6 @@ import MenuItem from 'material-ui/MenuItem';
 import Home from './home';
 import Splash from './splash';
 import MainPage from '../tabs';
-import Settings from '../config/settings';
 
 class Select extends Component {
     constructor(props){
@@ -109,9 +108,11 @@ class Select extends Component {
         let container = this;
         let phoneNumber = '2349068972583';
         let message = 'Hello Adegoke, Your purchase of the Mutual Benefit Auto Insurance Policy for '+amt+' was successful';
-        Settings.sendSMS(phoneNumber,message)
+        fetch('https://aqueous-sands-14811.herokuapp.com/api/sms/?phone='+phoneNumber+'&message='+encodeURIComponent(message))
             .then()
-            .catch(e => {});
+            .catch(e => {
+                //alert(e.message);
+            });
         this.setState({
             openSnackbar : true,
             snackBarMessage : 'Creating Policy....',
