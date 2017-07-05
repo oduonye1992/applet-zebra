@@ -53,7 +53,7 @@ export default class extends React.Component {
         props.navigator = navigator;
         return React.createElement(route.component, props);
     }
-    mode = 'multiple';
+    mode = 'single';
     componentDidMount(){
         store.dispatch({
             type : 'APPLET_MODE',

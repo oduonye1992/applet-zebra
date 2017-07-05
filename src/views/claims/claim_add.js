@@ -172,7 +172,7 @@ class ClaimAdd extends Component {
         return (
             <DatePicker
                 onChange={(e, val)=>{
-                    this.answerQuestion(data.key, val)
+                    this.answerQuestion(data.key, JSON.stringify(val))
                 }}
                 formatDate={(date)=>{
                     return moment(date).format('DD/MM/YYYY');
@@ -198,7 +198,7 @@ class ClaimAdd extends Component {
     renderTextarea(data){
         return <TextField
                 onChange={(e, val)=>{
-                    this.answerQuestion(data.key, val)
+                    this.answerQuestion(data.key, JSON.stringify(val))
                 }}
                 value = {this.state.answers[data.key]}
                 hintText={data.placeholder}
