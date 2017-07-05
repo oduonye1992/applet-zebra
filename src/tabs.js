@@ -48,23 +48,42 @@ class MainPage extends React.Component {
 }
 
 export default class extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            canShow : false,
+            mode : 'single'
+        }
+    }
+    componentDidMount(){
+        window.formelo.Profile.getUserProfile()
+            .then(profile => {
+                let mode = profile.email_address === 'rd@pmglobaltechnology.com' ? 'private' : 'public';
+                this.setState({
+                    mode,
+                    canShow:true
+                });
+                store.dispatch({
+                    type : 'APPLET_MODE' ,
+                    data : {
+                        value : mode
+                    }
+                });
+            })
+            .catch(e=>{
+                alert('To continue, kindly grant the app access to your server');
+            })
+    }
     renderPage(route, navigator) {
         const props = route.props || {};
         props.navigator = navigator;
         return React.createElement(route.component, props);
     }
-    mode = 'single';
-    componentDidMount(){
-        store.dispatch({
-            type : 'APPLET_MODE',
-            data : {
-                value : this.mode === 'single' ? 'single' : 'multiple'
-            }
-        });
-    }
-
     render() {
-        if (this.mode === 'single'){
+        if (!this.state.canShow){
+            return null;
+        }
+        if (this.state.mode === 'public'){
             return <App/>;
         }
         return (

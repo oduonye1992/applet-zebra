@@ -12,8 +12,9 @@ injectTapEventPlugin();
 if (!window.Promise) {
     window.Promise = Promise;
 }
-
-ReactDOM.render(<MainPage />, document.getElementById('root'));
+document.addEventListener('deviceReady', ()=>{
+    ReactDOM.render(<MainPage />, document.getElementById('root'));
+});
 
 //ReactDOM.render(<MainPage />, document.getElementById('root'));
 registerServiceWorker();

@@ -1,4 +1,4 @@
-const multiple = {
+const publicMode = {
     "accuracy": 80.0,
         "address": "lakeville, MN 55044",
         "address2": null,
@@ -820,7 +820,7 @@ const multiple = {
     }],
         "zipcode": "55044"
 };
-const single = {
+const privateMode = {
     "accuracy": 80.0,
     "address": "lakeville, MN 55044",
     "address2": null,
@@ -1104,7 +1104,7 @@ const reducer = function(state, action) {
     }
     if(action.type === 'APPLET_MODE'){
         let newState = state;
-        newState.temp_zebra = action.data.value === 'single' ? single : multiple;
+        newState.temp_zebra = action.data.value === 'private' ? privateMode : publicMode;
         return newState;
     }
     if(action.type === 'NEW_POLICY'){
