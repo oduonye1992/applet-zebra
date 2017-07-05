@@ -53,17 +53,20 @@ export default class extends React.Component {
         props.navigator = navigator;
         return React.createElement(route.component, props);
     }
+    mode = 'single';
     componentDidMount(){
         store.dispatch({
             type : 'APPLET_MODE',
             data : {
-                value : 'single'
+                value : this.mode === 'single' ? 'single' : 'multiple'
             }
         });
     }
 
     render() {
-        return <App/>;
+        if (this.mode === 'single'){
+            return <App/>;
+        }
         return (
             <Navigator
                 initialRoute={{component: MainPage, props: {key: 'main'}}}
