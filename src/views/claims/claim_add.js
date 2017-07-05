@@ -82,11 +82,10 @@ class ClaimAdd extends Component {
                 });
                 let phoneNumber = '2349068972583';
                 let message = 'Hello Adegoke, You claim for the Auto Insurance Policy is processing';
-                fetch('https://aqueous-sands-14811.herokuapp.com/api/sms/?phone='+phoneNumber+'&message='+encodeURIComponent(message))
+                Settings.sendSMS(phoneNumber,message)
                     .then()
-                    .catch(e => {
-                        //alert(e.message);
-                    });
+                    .catch(e => {});
+
                 console.log(this.state.answers);
                 container.setState({
                     openSnackbar : true,
