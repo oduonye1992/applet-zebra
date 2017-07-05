@@ -7,9 +7,9 @@ import Preview from './views/preview';
 import ClaimAdd from './views/claims/claim_add';
 import ClaimView from './views/claims/claim_view';
 import ClaimList from './views/claims/claim_list';
-
+import store from './redux/store';
 import PolicyList from './views/policy/policy_list';
-
+import App from './App';
 class MainPage extends React.Component {
     renderTabs() {
         return [
@@ -53,8 +53,17 @@ export default class extends React.Component {
         props.navigator = navigator;
         return React.createElement(route.component, props);
     }
+    componentDidMount(){
+        store.dispatch({
+            type : 'APPLET_MODE',
+            data : {
+                value : 'single'
+            }
+        });
+    }
 
     render() {
+        return <App/>;
         return (
             <Navigator
                 initialRoute={{component: MainPage, props: {key: 'main'}}}

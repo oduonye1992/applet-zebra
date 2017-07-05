@@ -9,6 +9,8 @@ import Snackbar from 'material-ui/Snackbar';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Home from './home';
+import Splash from './splash';
+import MainPage from '../tabs';
 
 class Select extends Component {
     constructor(props){
@@ -65,27 +67,71 @@ class Select extends Component {
                     amount : '$296'
                 }
             ],
-            parent : store.getState()
+            parent : store.getState(),
+            openSnackbar : false,
+            openActionMessage : ''
         };
         this.payWithPayStack = this.payWithPayStack.bind(this);
     }
     payWithPayStack(amount){
+        let container = this;
         let handler = window.PaystackPop.setup({
-            key: 'pk_test_86d32aa1nV4l1da7120ce530f0b221c3cb97cbcc',
+            key: 'pk_test_ba97dfac0baea6f0ae4201cb30bf84bebf0c9f54',
             email: 'adegoke.taofeek@gmail.com',
-            amount: amount,
+            amount: amount*100,
             ref: Math.floor((Math.random() * 10000) + 10000001),
             metadata: {
                 custom_fields: []
             },
             callback: function(response){
-                alert('success. transaction ref is ' + response.reference);
+                // alert('success. transaction ref is ' + response.reference);
+                container.sendSMS(amount);
             },
             onClose: function(){
                 alert('window closed');
             }
         });
         handler.openIframe();
+    }
+    renderFooter(){
+        return <div
+            onClick={()=>{
+
+            }}
+            style={{position:'absolute', bottom:0, width:'100vw',
+                alignItems:'center',
+                height:'8vh', backgroundColor:'black', justifyContent:'center', display:'flex'}}>
+            <p style={{textAlign:'center', color:'white'}}>Call to Get Free Quotes</p>
+        </div>
+    }
+    sendSMS(amt){
+        let container = this;
+        let phoneNumber = '2349068972583';
+        let message = 'Hello Adegoke, Your purchase of the Mutual Benefit Auto Insurance Policy for '+amt+' was successful';
+        fetch('https://aqueous-sands-14811.herokuapp.com/api/sms/?phone='+phoneNumber+'&message='+encodeURIComponent(message))
+            .then()
+            .catch(e => {
+                //alert(e.message);
+            });
+        this.setState({
+            openSnackbar : true,
+            snackBarMessage : 'Creating Policy....',
+            openActionMessage : 'Cancel'
+        }, ()=>{
+            setTimeout(()=>{
+                this.setState({
+                    openSnackbar : true,
+                    snackBarMessage : 'Policy Created!',
+                    openActionMessage : 'OK '
+                }, ()=>{
+                    setTimeout(()=>{
+                        container.props.navigator.pushPage({
+                            component : MainPage
+                        });
+                    }, 1000);
+                })
+            }, 2000)
+        });
     }
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
@@ -136,7 +182,7 @@ class Select extends Component {
                                     value : res
                                 }
                             });
-                            this.payWithPayStack(350 * (res.monthly_estimate.toFixed(0) + 1));
+                            this.payWithPayStack(3 * (res.monthly_estimate.toFixed(0) + 1));
                         }}
                         key={res.carrier_id}>
                         <div className='center'>
@@ -146,21 +192,12 @@ class Select extends Component {
                         </div>
                         <div className='right'>
                             <div>
-                                <p size="30" style={{fontSize:'30px',  color:'#2c3e50'}}>N{350 * (res.monthly_estimate.toFixed(0) + 1)}</p>
+                                <p size="30" style={{fontSize:'30px',  color:'#2c3e50'}}>N{3 * (res.monthly_estimate.toFixed(0) + 1)}/Yr</p>
                             </div>
                         </div>
                     </ListItem>
                 })}
             </section>
-            <div
-                onClick={()=>{
-
-                }}
-                style={{position:'absolute', bottom:0, width:'100vw',
-                alignItems:'center',
-                height:'8vh', backgroundColor:'black', justifyContent:'center', display:'flex'}}>
-                <p style={{textAlign:'center', color:'white'}}>Call to Get Free Quotes</p>
-            </div>
         </Page>
     }
 }

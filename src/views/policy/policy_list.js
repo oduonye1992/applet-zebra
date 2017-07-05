@@ -35,7 +35,7 @@ class PolicyList extends Component {
             title : 'Life Insurance claim',
             date : '2008/08/13',
             status : 'error',
-            amount : 'N120,000/yr'
+            amount : 'N10,000/yr'
         },
         {
             title : 'Phone Insurance',
@@ -61,9 +61,8 @@ class PolicyList extends Component {
                     <Toolbar>
                         <div className='left' style={{backgroundColor:'#3498db'}}>
                             <ToolbarButton onClick={()=>{
-                                this.props.navigator.popPage();
+
                             }}>
-                                <Icon icon = "ion-chevron-left" style={{color:'white'}} />
                             </ToolbarButton>
                         </div>
                         <div className='center' style={{backgroundColor:'#3498db', color:''}}>

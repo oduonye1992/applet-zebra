@@ -84,11 +84,7 @@ class ClaimList extends Component {
                 renderToolbar={() =>
                     <Toolbar>
                         <div className='left' style={{backgroundColor:'#1abc9c'}}>
-                            <ToolbarButton onClick={()=>{
-                                this.props.navigator.popPage();
-                            }}>
-                                <Icon icon = "ion-chevron-left" style={{color:'white'}} />
-                            </ToolbarButton>
+
                         </div>
                         <div className='center' style={{backgroundColor:'#1abc9c', color:''}}>
                         </div>

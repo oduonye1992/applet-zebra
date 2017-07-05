@@ -433,13 +433,16 @@ class Home extends Component {
                         return <Col width="50">
                             <Paper zDepth={1} style={{ height:150, display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
                                 <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{item.carrier_display_name}</h4>
-                                <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>N{350 * (item.monthly_estimate.toFixed(0) + 1)}</h2>
+                                <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>N{3 * (item.monthly_estimate.toFixed(0) + 1)}/Yr</h2>
                             </Paper>
                         </Col>
                     })}
                 </Row>
             </div>
         );
+    }
+    renderSingle(){
+
     }
     render(){
         return (
