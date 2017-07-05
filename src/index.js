@@ -12,7 +12,7 @@ injectTapEventPlugin();
 if (!window.Promise) {
     window.Promise = Promise;
 }
-
+/*
 let handler = window.PaystackPop.setup({
     key: 'pk_test_86d32aa1nV4l1da7120ce530f0b221c3cb97cbcc',
     email: 'adegoke.taofeek@gmail.com',
@@ -28,7 +28,7 @@ let handler = window.PaystackPop.setup({
         alert('window closed');
     }
 });
-handler.openIframe();
+handler.openIframe();*/
 
 ReactDOM.render(<MainPage />, document.getElementById('root'));
 
