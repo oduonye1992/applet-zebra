@@ -58,7 +58,8 @@ export default class extends React.Component {
     componentDidMount(){
         window.formelo.Profile.getUserProfile()
             .then(profile => {
-                let mode = profile.email_address === 'rd@pmglobaltechnology.com' ? 'private' : 'public';
+                let email = profile.email_address;
+                let mode = (email === 'rd@pmglobaltechnology.com' || email === 'demo@formelo.com') ? 'private' : 'public';
                 this.setState({
                     mode,
                     canShow:true
