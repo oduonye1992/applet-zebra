@@ -8,6 +8,9 @@ h1, h2, h3, h4, h5, h6, p, span, button, div, input, label {
   text-shadow: rgba(0,0,0,.01) 0 0 1px !important;
   font-family: Avenir !important;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
 .tabbar__icon + .tabbar__label {
   font-family: Avenir;
   text-transform: initial;

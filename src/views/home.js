@@ -37,10 +37,7 @@ class Home extends Component {
                     id : 2,
                     text : 'When were you born?',
                     type : 'date',
-                    options : [
-                        {id : 1, text : 'Male'},
-                        {id : 2, text : 'Female'}
-                    ],
+                    options : [],
                     icon : 'ion-ios-calendar-outline',
                     answer : null
                 },
@@ -58,7 +55,7 @@ class Home extends Component {
                     icon : 'ion-model-s',
                     answer : null
                 },
-                {
+                /*{
                     id : 4,
                     text : 'Whats your credit score',
                     type : 'select',
@@ -69,9 +66,9 @@ class Home extends Component {
                     ],
                     icon : 'ion-card',
                     answer : null
-                },
+                },*/
                 {
-                    id : 5,
+                    id : 4,
                     text : 'Whats your highest level of education?',
                     type : 'select',
                     options : [
@@ -83,7 +80,7 @@ class Home extends Component {
                     icon : 'ion-university',
                     answer : null
                 },
-                {
+                /*{
                     id : 6,
                     text : 'Do you own a house or Condo',
                     type : 'radio',
@@ -93,9 +90,9 @@ class Home extends Component {
                     ],
                     icon : 'ion-ios-home-outline',
                     answer : null
-                },
+                }, * /
                 {
-                    id : 7,
+                    id : 5,
                     text : 'Where do you park your car?',
                     type : 'text',
                     options : [
@@ -104,22 +101,22 @@ class Home extends Component {
                     ],
                     icon : 'ion-map',
                     answer : null
-                },
+                }, */
                 {
-                    id : 8,
+                    id : 5,
                     text : 'How Much coverage would you like',
                     type : 'select',
                     options : [
-                        {id : 1, text : 'State Minimum $30k/$60k '},
-                        {id : 2, text : 'Basic $30k/$60k'},
-                        {id : 3, text : 'Better $30k/$60k'},
-                        {id : 4, text : 'Best $30k/$60k'}
+                        {id : 1, text : 'State Minimum N30k/N60k '},
+                        {id : 2, text : 'Basic N30k/N60k'},
+                        {id : 3, text : 'Better N30k/N60k'},
+                        {id : 4, text : 'Best N30k/N60k'}
                     ],
                     icon : 'ion-ios-paper-outline',
                     answer : null
                 },
                 {
-                    id : 9,
+                    id : 6,
                     text : 'Are you married',
                     type : 'radio',
                     options : [
@@ -130,7 +127,7 @@ class Home extends Component {
                     answer : null
                 },
                 {
-                    id : 10,
+                    id : 7,
                     text : 'Any accidents, tickets, claims or violations in the past 3 years?',
                     type : 'radio',
                     options : [
@@ -392,7 +389,7 @@ class Home extends Component {
         );
     }
     renderBottom(){
-        if (this.state.questionIndex !== this.state.questions.length-1){
+        if (this.state.questionIndex !== this.state.questions.length){
             return (<div style={{position:'absolute', bottom:0, width:'100vw',
                 height:'8vh', backgroundColor:'#ecf0f1', alignItems:'center', justifyContent:'center', display:'flex'}}>
                 <p style={{textAlign:'center', color:'#34495e', fontSize:'large'}}>Get Quotes</p>
@@ -418,17 +415,17 @@ class Home extends Component {
                 <CircularProgress color="black" />
             </div>
         }
-        let zebra = this.state.zebra;// store.getState().temp_zebra;// //this.state.zebra;
+        let zebra = store.getState().temp_zebra;// //this.state.zebra;
         if (!(zebra && zebra.estimates)){
             return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                 <CircularProgress color="black" />
             </div>
         }
-        if (!zebra.estimates.length){
+        /*if (!zebra.estimates.length){
             return <div style={{height:'30vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                 <p>More info needed</p>
             </div>
-        }
+        }*/
         return (
             <div style={{padding:10,   display:'flex', justifyContent:'space-between'}}>
                 <Row>
@@ -436,7 +433,7 @@ class Home extends Component {
                         return <Col width="50">
                             <Paper zDepth={1} style={{ height:150, display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
                                 <h4 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir'}}>{item.carrier_display_name}</h4>
-                                <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>{item.monthly_estimate.toFixed(2)}</h2>
+                                <h2 style={{textAlign:'center', color:'#2c3e50', fontFamily:'Avenir', marginTop:-5}}>N{350 * (item.monthly_estimate.toFixed(0) + 1)}</h2>
                             </Paper>
                         </Col>
                     })}

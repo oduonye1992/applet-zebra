@@ -66,28 +66,47 @@ class Select extends Component {
                 }
             ],
             parent : store.getState()
-        }
+        };
+        this.payWithPayStack = this.payWithPayStack.bind(this);
+    }
+    payWithPayStack(amount){
+        let handler = window.PaystackPop.setup({
+            key: 'pk_test_86d32aa1nV4l1da7120ce530f0b221c3cb97cbcc',
+            email: 'adegoke.taofeek@gmail.com',
+            amount: amount,
+            ref: Math.floor((Math.random() * 10000) + 10000001),
+            metadata: {
+                custom_fields: []
+            },
+            callback: function(response){
+                alert('success. transaction ref is ' + response.reference);
+            },
+            onClose: function(){
+                alert('window closed');
+            }
+        });
+        handler.openIframe();
     }
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
     }
     render(){
         return <Page
-            renderToolbar={() =>
-                <Toolbar>
-                    <div className='left' style={{backgroundColor:'#8e44ad'}}>
-                        <ToolbarButton onClick={()=>{
-                            this.props.navigator.popPage();
-                        }}>
-                            <Icon icon = "ion-chevron-left" style={{color:'white'}} />
-                        </ToolbarButton>
-                    </div>
-                    <div className='center' style={{backgroundColor:'#8e44ad', color:''}}>
-                    </div>
-                    <div className='right' style={{backgroundColor:'#8e44ad'}}></div>
-                </Toolbar>
-            }
-        >
+                    renderToolbar={() =>
+                        <Toolbar>
+                            <div className='left' style={{backgroundColor:'#8e44ad'}}>
+                                <ToolbarButton onClick={()=>{
+                                    this.props.navigator.popPage();
+                                }}>
+                                    <Icon icon = "ion-chevron-left" style={{color:'white'}} />
+                                </ToolbarButton>
+                            </div>
+                            <div className='center' style={{backgroundColor:'#8e44ad', color:''}}>
+                            </div>
+                            <div className='right' style={{backgroundColor:'#8e44ad'}}></div>
+                        </Toolbar>
+                    }
+                >
             <div style={{height:'5vh', backgroundColor:'#8e44ad', display:'flex', flexDirection:'column', padding:20, justifyContent:'center'}}>
                 <h4 style={{color:'white'}}>Select a Quote</h4>
             </div>
@@ -117,29 +136,17 @@ class Select extends Component {
                                     value : res
                                 }
                             });
-                            if (window.formelo){
-                                window.formelo.InAppBrowser('https://paystack.com/pay/insuredemo', {})
-                                    .then(res=>{
-
-                                    })
-                                    .then(e => {
-
-                                    });
-                            } else {
-                                let win = window.open('https://paystack.com/pay/insuredemo', '_blank');
-                                win.focus();
-                            }
+                            this.payWithPayStack(350 * (res.monthly_estimate.toFixed(0) + 1));
                         }}
                         key={res.carrier_id}>
                         <div className='center'>
                             <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
                                 <p>{res.carrier_display_name}</p>
-                                <p style={{fontSize:'small', marginTop:'-2vh'}}>{res.carrier_description.substr(0, 200)+'...'}</p>
                             </div>
                         </div>
                         <div className='right'>
                             <div>
-                                <p size="30" style={{fontSize:'30px',  color:'#2c3e50'}}>{res.monthly_estimate.toFixed(2)}</p>
+                                <p size="30" style={{fontSize:'30px',  color:'#2c3e50'}}>N{350 * (res.monthly_estimate.toFixed(0) + 1)}</p>
                             </div>
                         </div>
                     </ListItem>
