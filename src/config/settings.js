@@ -1,19 +1,23 @@
 const Settings  = {
     questions : [
         {
-            title : 'Details Of Insured',
+            title : 'Policy Details',
             items : [
                 {
-                    title : 'Vehicle Number',
-                    key : 'vehicle_number',
-                    placeholder : 'e.g 11223344',
-                    type : 'number'
-                },
-                {
-                    title : 'Chasis Number',
-                    key : 'chasis_number',
-                    placeholder : 'e.g 11223344',
-                    type : 'number'
+                    title : 'Type of Policy.',
+                    key : 'policy_type',
+                    placeholder : '',
+                    type : 'select',
+                    datasets : [
+                        {
+                            value : 'Comprehensive Auto Insurance Policy',
+                            title : 'Comprehensive Auto Insurance Policy'
+                        },
+                        {
+                            value : 'Third Party Insurance Policy',
+                            title : 'Third Party Insurance Policy'
+                        }
+                    ]
                 }
             ]
         },
@@ -21,7 +25,7 @@ const Settings  = {
             title : 'Loss Details',
             items : [
                 {
-                    title : 'Accident Happened to',
+                    title : 'The accident happened on what date',
                     key : 'accident_happened_to',
                     placeholder : '',
                     type : 'date'
@@ -81,7 +85,7 @@ const Settings  = {
                     title : 'Valid Upto',
                     key : 'drivers_licence_valid_upto',
                     placeholder : '',
-                    type : 'text'
+                    type : 'date'
                 },
                 {
                     title : 'Occupation',
@@ -111,7 +115,7 @@ const Settings  = {
                         },
                         {
                             value: 'A Relative / Friend',
-                            title: 'The Owner'
+                            title: 'A Relative / Friend'
                         }
                     ]
                 }
@@ -125,12 +129,6 @@ const Settings  = {
                     key : 'lodged_police_report',
                     placeholder : '',
                     type : 'toggle'
-                },
-                {
-                    title : 'FIR No',
-                    key : 'police_report_number',
-                    placeholder : 'Police report number',
-                    type : 'number'
                 },
                 {
                     title : 'Death / Injury to any occupant',
@@ -150,7 +148,7 @@ const Settings  = {
                     type: 'image'
                 },
                 {
-                    title: 'FIR Report (if lodged)',
+                    title: 'Police Report (if lodged)',
                     key: 'fir_no_picture',
                     placeholder: 'Police report number',
                     type: 'image'

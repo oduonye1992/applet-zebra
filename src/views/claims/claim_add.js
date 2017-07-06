@@ -37,14 +37,34 @@ class ClaimAdd extends Component {
         this.handleNext = this.handleNext.bind(this);
         this.handlePrev = this.handlePrev.bind(this);
     }
+    editData = {
+        'policy_type' : 'Comprehensive Auto Insurance Policy',
+        'accident_happened_to' : '30/10/2017',
+        'time_of_accident' : '20:30',
+        'place_of_accident' : '#rd Mainland Bridge, Lagos',
+        'i_was_driving':  true,
+        'driver_gender' : 'Male',
+        'description_of_accident' : 'I was on 60MPH when I was barged into by a Police Van',
+        'drivers_licence_number' : '2113445561',
+        'drivers_licence_valid_upto' : '10/10/2018',
+        'occupation' : 'Student',
+        'authorized_driver' : true,
+        'who_drove_the_car' : 'A Relative / Friend',
+        'lodged_police_report' : true,
+        'injury_to_any_occupant' : true,
+        'picture_of_vehicle' : 'https://i.onthe.io/vllkyt1sgu8dm91gtg.r400x300.07c9b097.jpg',
+        'fir_no_picture' : 'https://s-media-cache-ak0.pinimg.com/originals/83/9a/f9/839af9dcc40964921e5a7c1b02da5ead.jpg',
+        'drivers_licence':'https://allday-img.rbl.ms/simage/https%3A%2F%2Fassets.rbl.ms%2F9308075%2F980x.jpg/2000%2C2000/S7F%2FIqtwx4yIT%2Ffi/img.jpg'
+    };
     componentDidMount(){
-        let editData = this.props.selected;
+        let editData = this.editData; //this.props.selected;
         let answers = {};
         this.questions.forEach(cat => {
             cat.items.forEach(question => {
                 answers[question.key] = editData && editData[question.key] ? editData[question.key] : null;
             });
         });
+        // alert(JSON.stringify(answers));
         this.setState({
             answers
         });
@@ -80,8 +100,8 @@ class ClaimAdd extends Component {
                         value : this.state.answers
                     }
                 });
-                let phoneNumber = '2349068972583';
-                let message = 'Hello Adegoke, You claim for the Auto Insurance Policy is processing';
+                let phoneNumber ='2348039774040';// '2349068972583'; //8039774040;
+                let message = 'Hello Femi, Your claim for the Auto Insurance Policy is processing';
                 fetch('https://aqueous-sands-14811.herokuapp.com/api/sms/?phone='+phoneNumber+'&message='+encodeURIComponent(message))
                     .then()
                     .catch(e => {
@@ -111,8 +131,8 @@ class ClaimAdd extends Component {
             <div style={{margin: '12px 0'}}>
                 <RaisedButton
                     label={stepIndex === this.questions.length-1 ? 'Finish' : 'Next'}
-                    disableTouchRipple={true}
-                    disableFocusRipple={true}
+                    disableTouchRipple={false}
+                    disableFocusRipple={false}
                     primary={true}
                     onTouchTap={this.handleNext}
                     style={{marginRight: 12}}
@@ -121,8 +141,8 @@ class ClaimAdd extends Component {
                     <FlatButton
                         label="Back"
                         disabled={stepIndex === 0}
-                        disableTouchRipple={true}
-                        disableFocusRipple={true}
+                        disableTouchRipple={false}
+                        disableFocusRipple={false}
                         onTouchTap={this.handlePrev}
                     />
                 )}
@@ -142,15 +162,18 @@ class ClaimAdd extends Component {
     }
     renderToggle(data){
         return (
+        <div>
             <Toggle
                 name={data.key}
                 value = {this.state.answers[data.key]}
                 label={data.title}
-                toggled={false}
+                toggled={this.state.answers[data.key]}
                 onToggle={()=>{
                     this.answerQuestion(data.key, !this.state.answers[data.key])
                 }}
             />
+            <br/>
+        </div>
         );
     }
     renderSelect(data){
@@ -208,6 +231,18 @@ class ClaimAdd extends Component {
             />
     }
     renderImage(data){
+        if (this.state.answers[data.key]){
+            return (
+                <div style={{display:'flex'}}>
+                    <div style={{height:'10vh', width:'30vw', display:'flex', alignItems:'center', justifyContent:'center'}}>
+                        <p style={{color:'#2c3e50', textAlign:'center'}}> {data.title} </p>
+                    </div>
+                    <div style={{height:'10vh', width:'60vw', display:'flex', alignItems:'center', justifyContent:'center', border:'1px solid #ecf0f1'}}>
+                        <img src = {this.state.answers[data.key]} style={{height:'10vh', width:'70vw'}} />
+                    </div>
+                </div>
+            );
+        }
         return (
             <div style={{display:'flex'}}>
                 <div style={{height:'10vh', width:'30vw', display:'flex', alignItems:'center', justifyContent:'center'}}>

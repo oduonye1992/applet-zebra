@@ -59,13 +59,13 @@ export default class extends React.Component {
         window.formelo.Profile.getUserProfile()
             .then(profile => {
                 let email = profile.email_address;
-                let mode = (email === 'rd@pmglobaltechnology.com' || email === 'demo@formelo.com') ? 'private' : 'public';
+                let mode = (email !== 'rd@pmglobaltechnology.com' || email === 'demo@formelo.com') ? 'private' : 'public';
                 this.setState({
                     mode,
                     canShow:true
                 });
                 store.dispatch({
-                    type : 'APPLET_MODE' ,
+                    type : 'APPLET_MODE',
                     data : {
                         value : mode
                     }

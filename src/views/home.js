@@ -67,7 +67,7 @@ class Home extends Component {
                     icon : 'ion-card',
                     answer : null
                 },*/
-                {
+               /* {
                     id : 4,
                     text : 'Whats your highest level of education?',
                     type : 'select',
@@ -103,7 +103,7 @@ class Home extends Component {
                     answer : null
                 }, */
                 {
-                    id : 5,
+                    id : 4,
                     text : 'How Much coverage would you like',
                     type : 'select',
                     options : [
@@ -116,7 +116,7 @@ class Home extends Component {
                     answer : null
                 },
                 {
-                    id : 6,
+                    id : 5,
                     text : 'Are you married',
                     type : 'radio',
                     options : [
@@ -127,7 +127,7 @@ class Home extends Component {
                     answer : null
                 },
                 {
-                    id : 7,
+                    id : 6,
                     text : 'Any accidents, tickets, claims or violations in the past 3 years?',
                     type : 'radio',
                     options : [
