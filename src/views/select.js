@@ -163,7 +163,7 @@ class Select extends Component {
                     fontFamily : 'Avenir'
                 }}
                 action={this.state.openActionMessage}
-                autoHideDuration={4000}
+                autoHideDuration={5000}
                 onRequestClose={()=>{
                         this.setState({
                             openSnackbar : false
@@ -174,6 +174,7 @@ class Select extends Component {
             <section style={{paddingLeft:10, paddingRight:10, maxHeight:'80vh', overflow:'scroll'}}>
                 {this.state.parent.temp_zebra.estimates.map(res => {
                     return <ListItem
+                        style={{borderBottom:'1px solid #ecf0f1'}}
                         longdivider
                         onTouchTap={()=>{
                             store.dispatch({
@@ -181,6 +182,11 @@ class Select extends Component {
                                 data : {
                                     value : res
                                 }
+                            });
+                            this.setState({
+                                openSnackbar : true,
+                                snackBarMessage : 'Please Wait...',
+                                openActionMessage : 'Cancel'
                             });
                             this.payWithPayStack(3 * (res.monthly_estimate.toFixed(0) + 1));
                         }}
