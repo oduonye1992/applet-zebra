@@ -56,6 +56,17 @@ export default class extends React.Component {
         }
     }
     componentDidMount(){
+        /*this.setState({
+            mode : 'private',
+            canShow:true
+        });
+        store.dispatch({
+            type : 'APPLET_MODE',
+            data : {
+                value : 'private'
+            }
+        });
+        return*/
         window.formelo.Profile.getUserProfile()
             .then(profile => {
                 let email = profile.email_address;

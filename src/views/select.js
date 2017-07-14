@@ -106,7 +106,7 @@ class Select extends Component {
     }
     sendSMS(amt){
         let container = this;
-        let phoneNumber = '2348098168509';// '2349068972583';//8039774040
+        let phoneNumber = '2348167900000';// '2349068972583';//8039774040
         let message = 'Hello Emmanuel, Your purchase of the Mutual Benefit Auto Insurance Policy for '+amt+' was successful';
         fetch('https://aqueous-sands-14811.herokuapp.com/api/sms/?phone='+phoneNumber+'&message='+encodeURIComponent(message))
             .then()
