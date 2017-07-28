@@ -13,7 +13,76 @@ import Paper from 'material-ui/Paper';
 import Select from './select';
 import CircularProgress from 'material-ui/CircularProgress';
 import store from '../redux/store';
-
+/*questions : [
+ {
+ id : 1,
+ text : 'What gender are you?',
+ type : 'radio',
+ options : [
+ {id : 1, text : 'Male'},
+ {id : 2, text : 'Female'}
+ ],
+ icon : 'ion-ios-body-outline',
+ answer : null
+ },
+ {
+ id : 2,
+ text : 'When were you born?',
+ type : 'date',
+ options : [],
+ icon : 'ion-ios-calendar-outline',
+ answer : null
+ },
+ {
+ id : 3,
+ text : 'Are you currently insured? If yes, for how long?',
+ type : 'select',
+ options : [
+ {id : 1, text : 'Move than 3 years'},
+ {id : 2, text : '1 to 3 Years'},
+ {id : 3, text : '7 to 12 Years'},
+ {id : 4, text : '6 months or less'},
+ {id : 5, text : 'Not currently insured'},
+ ],
+ icon : 'ion-model-s',
+ answer : null
+ },
+ {
+ id : 4,
+ text : 'How Much coverage would you like',
+ type : 'select',
+ options : [
+ {id : 1, text : 'State Minimum N30k/N60k '},
+ {id : 2, text : 'Basic N30k/N60k'},
+ {id : 3, text : 'Better N30k/N60k'},
+ {id : 4, text : 'Best N30k/N60k'}
+ ],
+ icon : 'ion-ios-paper-outline',
+ answer : null
+ },
+ {
+ id : 5,
+ text : 'Are you married',
+ type : 'radio',
+ options : [
+ {id : 1, text : 'Yes'},
+ {id : 2, text : 'No'}
+ ],
+ icon : 'ion-ios-heart-outline',
+ answer : null
+ },
+ {
+ id : 6,
+ text : 'Any accidents, tickets, claims or violations in the past 3 years?',
+ type : 'radio',
+ options : [
+ {id : 1, text : 'Yes'},
+ {id : 2, text : 'No'}
+ ],
+ icon : 'ion-ios-clock-outline',
+ answer : null
+ }
+ ],*/
 class Home extends Component {
     constructor(props){
         super(props);
@@ -24,117 +93,47 @@ class Home extends Component {
             questions : [
                 {
                     id : 1,
-                    text : 'What gender are you?',
+                    text : 'What is the primary use of the car?',
                     type : 'radio',
                     options : [
-                        {id : 1, text : 'Male'},
-                        {id : 2, text : 'Female'}
+                        {id : 1, text : 'Private Use'},
+                        {id : 2, text : 'Commercial Use'}
                     ],
-                    icon : 'ion-ios-body-outline',
+                    icon : 'ion-android-car',
                     answer : null
                 },
                 {
                     id : 2,
-                    text : 'When were you born?',
-                    type : 'date',
-                    options : [],
-                    icon : 'ion-ios-calendar-outline',
+                    text : 'Where do you park your car at night',
+                    type : 'radio',
+                    options : [
+                        {id : 1, text : 'Inside locked gate'},
+                        {id : 2, text : 'On the street'},
+                    ],
+                    icon : 'ion-ios-moon',
                     answer : null
                 },
                 {
                     id : 3,
-                    text : 'Are you currently insured? If yes, for how long?',
+                    text : 'Do you gave a tracker installed on your car?',
+                    type : 'radio',
+                    options : [
+                        {id : 1, text : 'Yes'},
+                        {id : 2, text : 'No'},
+                    ],
+                    icon : 'ion-location',
+                    answer : null
+                },
+                {
+                    id : 4,
+                    text : 'What type of policy cover do you want?',
                     type : 'select',
                     options : [
-                        {id : 1, text : 'Move than 3 years'},
-                        {id : 2, text : '1 to 3 Years'},
-                        {id : 3, text : '7 to 12 Years'},
-                        {id : 4, text : '6 months or less'},
-                        {id : 5, text : 'Not currently insured'},
+                        {id : 1, text : 'Comprehensive'},
+                        {id : 2, text : 'Third party fire and theft'},
+                        {id : 3, text : 'Third party liability'}
                     ],
                     icon : 'ion-model-s',
-                    answer : null
-                },
-                /*{
-                    id : 4,
-                    text : 'Whats your credit score',
-                    type : 'select',
-                    options : [
-                        {id : 1, text : 'Poor'},
-                        {id : 2, text : 'Fair'},
-                        {id : 3, text : 'Good'}
-                    ],
-                    icon : 'ion-card',
-                    answer : null
-                },*/
-               /* {
-                    id : 4,
-                    text : 'Whats your highest level of education?',
-                    type : 'select',
-                    options : [
-                        {id : 1, text : 'No Diploma'},
-                        {id : 2, text : 'Bachelors degree'},
-                        {id : 3, text : 'Masters degree'},
-                        {id : 3, text : 'Doctoral degree'}
-                    ],
-                    icon : 'ion-university',
-                    answer : null
-                },
-                /*{
-                    id : 6,
-                    text : 'Do you own a house or Condo',
-                    type : 'radio',
-                    options : [
-                        {id : 1, text : 'Yes'},
-                        {id : 2, text : 'No'}
-                    ],
-                    icon : 'ion-ios-home-outline',
-                    answer : null
-                }, * /
-                {
-                    id : 5,
-                    text : 'Where do you park your car?',
-                    type : 'text',
-                    options : [
-                        {id : 1, text : 'Yes'},
-                        {id : 2, text : 'No'}
-                    ],
-                    icon : 'ion-map',
-                    answer : null
-                }, */
-                {
-                    id : 4,
-                    text : 'How Much coverage would you like',
-                    type : 'select',
-                    options : [
-                        {id : 1, text : 'State Minimum N30k/N60k '},
-                        {id : 2, text : 'Basic N30k/N60k'},
-                        {id : 3, text : 'Better N30k/N60k'},
-                        {id : 4, text : 'Best N30k/N60k'}
-                    ],
-                    icon : 'ion-ios-paper-outline',
-                    answer : null
-                },
-                {
-                    id : 5,
-                    text : 'Are you married',
-                    type : 'radio',
-                    options : [
-                        {id : 1, text : 'Yes'},
-                        {id : 2, text : 'No'}
-                    ],
-                    icon : 'ion-ios-heart-outline',
-                    answer : null
-                },
-                {
-                    id : 6,
-                    text : 'Any accidents, tickets, claims or violations in the past 3 years?',
-                    type : 'radio',
-                    options : [
-                        {id : 1, text : 'Yes'},
-                        {id : 2, text : 'No'}
-                    ],
-                    icon : 'ion-ios-clock-outline',
                     answer : null
                 }
             ],
@@ -150,9 +149,21 @@ class Home extends Component {
         this.renderBottom = this.renderBottom.bind(this);
         this.update = this.update.bind(this);
         this.buildQueryString = this.buildQueryString.bind(this);
+        this.waitForIt = this.waitForIt.bind(this);
     }
     componentDidMount(){
         this.update();
+    }
+    waitForIt(timer){
+        let container = this;
+        return new Promise((resolve, reject) =>{
+            setTimeout(()=>{
+                let zebra = store.getState().zebra_questions;
+                container.setState({
+                    zebra
+                },resolve);
+            }, timer || 1000);
+        })
     }
     parseResponse(response){
         if (response.status >= 200 && response.status < 300) {
@@ -180,9 +191,10 @@ class Home extends Component {
             this.setState({
                 isLoading : true
             });
-            let updatedResponse = await this.updateZebraRecord();
-            let pollResult = await this.keepPolingUntilAResponseExists();
-            let fetchResponse = await this.fetchZebraResponse();
+            await this.waitForIt();
+            //let updatedResponse = await this.updateZebraRecord();
+            //let pollResult = await this.keepPolingUntilAResponseExists();
+            //let fetchResponse = await this.fetchZebraResponse();
             this.setState({
                 isLoading : false
             });

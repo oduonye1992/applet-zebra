@@ -9,6 +9,7 @@ import ClaimView from './views/claims/claim_view';
 import ClaimList from './views/claims/claim_list';
 import store from './redux/store';
 import PolicyList from './views/policy/policy_list';
+import Select from './views/select';
 import App from './App';
 class MainPage extends React.Component {
     renderTabs() {
@@ -67,6 +68,13 @@ export default class extends React.Component {
             }
         });
         return*/
+        store.dispatch({
+            type : 'APPLET_MODE',
+            data : {
+                value : 'private'
+            }
+        });
+        /*
         window.formelo.Profile.getUserProfile()
             .then(profile => {
                 let email = profile.email_address;
@@ -81,10 +89,18 @@ export default class extends React.Component {
                         value : mode
                     }
                 });
+                store.dispatch({
+                    type : 'STUFF_CHANGED',
+                    data : {
+                        key : 'profile',
+                        value : profile
+                    }
+                })
             })
             .catch(e=>{
                 alert('To continue, kindly grant the app access to your server');
             })
+            */
     }
     renderPage(route, navigator) {
         const props = route.props || {};
@@ -92,12 +108,6 @@ export default class extends React.Component {
         return React.createElement(route.component, props);
     }
     render() {
-        if (!this.state.canShow){
-            return null;
-        }
-        if (this.state.mode === 'public'){
-            return <App/>;
-        }
         return (
             <Navigator
                 initialRoute={{component: MainPage, props: {key: 'main'}}}

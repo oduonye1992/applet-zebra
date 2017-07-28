@@ -11,7 +11,7 @@ import MenuItem from 'material-ui/MenuItem';
 import Home from '../home';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-
+const moment = require('moment');
 
 
 class PolicyList extends Component {
@@ -29,25 +29,25 @@ class PolicyList extends Component {
             title : 'Auto Insurance claim',
             date : '2016/08/13',
             status : 'processing',
-            amount : 'N13,120/Yr'
+            amount : 'N13,120'
         },
         {
             title : 'Life Insurance claim',
             date : '2008/08/13',
             status : 'error',
-            amount : 'N10,000/yr'
+            amount : 'N10,000'
         },
         {
             title : 'Phone Insurance',
             date : '2009/08/13',
             status : 'error',
-            amount : 'N2,000/yr'
+            amount : 'N2,000'
         },
         {
             title : 'Bicycle Insurance claim',
             date : '2017/08/13',
             status : 'successful',
-            amount : 'N1050/yr'
+            amount : 'N1050'
         }
     ];
     claimColorMap = {
@@ -55,6 +55,12 @@ class PolicyList extends Component {
         'error' : '#e74c3c',
         'successful' : '#1abc9c'
     };
+    convertUnicode(input) {
+        return input.replace(/\\u(\w\w\w\w)/g,function(a,b) {
+            var charcode = parseInt(b,16);
+            return String.fromCharCode(charcode);
+        });
+    }
     render(){
         return <Page
                 renderToolbar={() =>
@@ -99,14 +105,15 @@ class PolicyList extends Component {
                         }}
                         key={res.carrier_id}>
                         <div className='center'>
-                            <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around'}}>
+                            <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
                                 <p>{res.title}</p>
-                                <p style={{fontSize:'small', marginTop:'-2vh', color:'#7f8c8d'}}>{res.date}</p>
+                                <p style={{fontSize:'small', marginTop:'-1vh', color:'#7f8c8d'}}>{moment(res.date).format('LLLL')}</p>
                             </div>
                         </div>
                         <div className='right'>
-                            <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-                                <p size="30" style={{fontSize:'30px',  color:'#2c3e50'}}>{res.amount}</p>
+                            <div style={{display:'flex', flexDirection:'column', alignItems:'flex-end', justifyContent:'center'}}>
+                                <p size="30" style={{fontSize:'25px',  color:'#2c3e50'}}>{res.amount}</p>
+                                <p style={{fontSize:'small', marginTop:'-3vh', color:'#7f8c8d'}}>Per month</p>
                             </div>
                         </div>
                     </ListItem>

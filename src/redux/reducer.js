@@ -1089,6 +1089,7 @@ const reducer = function(state, action) {
             temp_zebra : [],
             zebra_questions : null,
             claims : [],
+            profile : null,
             policies : []
         };
     }

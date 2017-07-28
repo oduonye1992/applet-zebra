@@ -16,5 +16,6 @@ if (!window.Promise) {
 document.addEventListener('deviceReady', ()=>{
     ReactDOM.render(<MainPage />, document.getElementById('root'));
 });
+
 // ReactDOM.render(<MainPage />, document.getElementById('root'));
 registerServiceWorker();
