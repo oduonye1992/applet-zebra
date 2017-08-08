@@ -74,7 +74,7 @@ class Select extends Component {
             openSnackbar : false,
             pageState : 'default',
             openActionMessage : '',
-            modalOpen : true,
+            modalOpen : false,
             selectedPolicy : null,
             paymentType : null, // card, ussd
         };
@@ -151,11 +151,12 @@ class Select extends Component {
                     custom_fields: []
                 },
                 callback: async function(response){
-                    this.setState({
+                    /*this.setState({
                         openSnackbar : true,
                         snackBarMessage : 'Creating policy...',
                         openActionMessage : ''
-                    });
+                    });*/
+                    return resolve();
                     try {
                         let a = await container.payWithUSSD(amount, "card");
                         resolve();
@@ -175,7 +176,7 @@ class Select extends Component {
             let url = "https://insuredemo.formelo.com/api/records";
             let body = {
                 "data": {
-                    "address": "Block 28, Festac Extension",
+                    "address": "Ajao Town, Lekki Phase 2, Lagos, Nigeria",
                     "agent_code": "self",
                     "agent_group": {
                         "id": "lagos",
@@ -188,8 +189,8 @@ class Select extends Component {
                         "name": "Private"
                     },
                     "end_date": "2017-07-21",
-                    "first_name": "Daniel",
-                    "last_name": "Oduonye",
+                    "first_name": "Niyi",
+                    "last_name": "Gbodimowo",
                     "night_parking": {
                         "id": "0.00",
                         "name": "Inside locked gate"
@@ -198,7 +199,7 @@ class Select extends Component {
                         "id": mode == "card" ? "card" : "ussd",
                         "name": mode == "card" ? "Card" : "Mobile USSD"
                     },
-                    "phone_number": "09097358418",
+                    "phone_number": "2348167900000",
                     "premium": "50000",
                     "start_date": "2017-07-21",
                     "sum_assured": "10000",
@@ -225,7 +226,7 @@ class Select extends Component {
             };
             let headers = {
                 'Content-Type': 'application/json',
-                Authorization : 'bearer atok_jKX6jd7ABgslq76J6l8XTRBrQ3NG77uBdElbDBOkcq9kr2z8yqID9mkjdNQoiJbBgG9kdnT5NVWG'
+                Authorization : 'basic '+btoa('rd@pmglobaltechnology.com:c4095c7b2fdcd562d764c07a53d41062d791a112a908c042e1f1d8a6c281887c')
             };
             let options = {
                 method: 'POST',
@@ -249,16 +250,22 @@ class Select extends Component {
     }
     async makePayment(amount){
         let container = this;
-        let amt = 3 * (this.state.selectedPolicy.monthly_estimate.toFixed(0) + 1)
-        this.setState({
-            openSnackbar : true,
-            snackBarMessage : 'Creating Policy....',
-            openActionMessage : 'Cancel'
-        });
+        let amt = 3 * (this.state.selectedPolicy.monthly_estimate.toFixed(0) + 1);
+
         try {
             if (this.state.paymentType === 'ussd'){
+                this.setState({
+                    openSnackbar : true,
+                    snackBarMessage : 'Creating policy',
+                    openActionMessage : 'Cancel'
+                });
                 const a = await this.payWithUSSD(amt);
             } else {
+                this.setState({
+                    openSnackbar : true,
+                    snackBarMessage : 'Contacting Paystack',
+                    openActionMessage : 'Cancel'
+                });
                 const a = await this.payWithPayStack(amt);
             }
             //const b = await this.sendSMS(amt);
@@ -389,7 +396,8 @@ class Select extends Component {
                         </div>
                         <div className='right'>
                             <div>
-                                <p size="30" style={{fontSize:'30px',  color:'#2c3e50'}}>N{3 * (res.monthly_estimate.toFixed(0) + 1)}/Yr</p>
+                                <p size="30" style={{fontSize:'30px',  color:'#2c3e50'}}>N{3 * (res.monthly_estimate.toFixed(0) + 1)}</p>
+                                <p style={{fontSize:'small', marginTop:'-3vh', color:'#7f8c8d'}}>Per year</p>
                             </div>
                         </div>
                     </ListItem>

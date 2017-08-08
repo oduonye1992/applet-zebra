@@ -973,7 +973,7 @@ const privateMode = {
         "last_modified": "2017-06-22T09:39:24.810351",
         "market_segment_id": 939464,
         "monetization_strategy": 1,
-        "monthly_estimate": 201.0,
+        "monthly_estimate": 301.0,
         "monthly_estimate_sub_text": "",
         "purchase_method_affiliate_link": "http://track.flexlinks.com/a.ashx?foid=1052077.323155&fot=9999&foc=1&fobs=",
         "rate_source": 0,

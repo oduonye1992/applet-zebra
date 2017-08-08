@@ -1,4 +1,8 @@
 const Settings  = {
+    formatHeight : (number) => {
+          let num = Math.floor(number/100 * 90);
+          return num+'vh'
+    },
     questions : [
         {
             title : 'Policy Details',
