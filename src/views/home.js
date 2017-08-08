@@ -135,6 +135,14 @@ class Home extends Component {
                     ],
                     icon : 'ion-model-s',
                     answer : null
+                },
+                {
+                    id : 5,
+                    text : 'Enter your mobile number',
+                    type : 'text',
+                    options : [],
+                    icon : 'ion-android-call',
+                    answer : null
                 }
             ],
             zebra : null,
