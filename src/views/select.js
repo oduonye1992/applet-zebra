@@ -189,8 +189,8 @@ class Select extends Component {
                         "name": "Private"
                     },
                     "end_date": "2017-07-21",
-                    "first_name": "Niyi",
-                    "last_name": "Gbodimowo",
+                    "first_name": "Emmanuel",
+                    "last_name": "Bobmanuel",
                     "night_parking": {
                         "id": "0.00",
                         "name": "Inside locked gate"
@@ -199,7 +199,7 @@ class Select extends Component {
                         "id": mode == "card" ? "card" : "ussd",
                         "name": mode == "card" ? "Card" : "Mobile USSD"
                     },
-                    "phone_number": "2348167900000",
+                    "phone_number": "2348098168509",
                     "premium": "50000",
                     "start_date": "2017-07-21",
                     "sum_assured": "10000",

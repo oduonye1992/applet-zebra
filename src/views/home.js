@@ -93,6 +93,14 @@ class Home extends Component {
             questions : [
                 {
                     id : 1,
+                    text : 'Enter your mobile number',
+                    type : 'text',
+                    options : [],
+                    icon : 'ion-android-call',
+                    answer : null
+                },
+                {
+                    id : 2,
                     text : 'What is the primary use of the car?',
                     type : 'radio',
                     options : [
@@ -103,7 +111,7 @@ class Home extends Component {
                     answer : null
                 },
                 {
-                    id : 2,
+                    id : 3,
                     text : 'Where do you park your car at night',
                     type : 'radio',
                     options : [
@@ -114,7 +122,7 @@ class Home extends Component {
                     answer : null
                 },
                 {
-                    id : 3,
+                    id : 4,
                     text : 'Do you gave a tracker installed on your car?',
                     type : 'radio',
                     options : [
@@ -125,7 +133,7 @@ class Home extends Component {
                     answer : null
                 },
                 {
-                    id : 4,
+                    id : 5,
                     text : 'What type of policy cover do you want?',
                     type : 'select',
                     options : [
@@ -134,14 +142,6 @@ class Home extends Component {
                         {id : 3, text : 'Third party liability'}
                     ],
                     icon : 'ion-model-s',
-                    answer : null
-                },
-                {
-                    id : 5,
-                    text : 'Enter your mobile number',
-                    type : 'text',
-                    options : [],
-                    icon : 'ion-android-call',
                     answer : null
                 }
             ],

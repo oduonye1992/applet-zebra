@@ -57,50 +57,12 @@ export default class extends React.Component {
         }
     }
     componentDidMount(){
-        /*this.setState({
-            mode : 'private',
-            canShow:true
-        });
         store.dispatch({
             type : 'APPLET_MODE',
             data : {
                 value : 'private'
             }
         });
-        return*/
-        store.dispatch({
-            type : 'APPLET_MODE',
-            data : {
-                value : 'private'
-            }
-        });
-        /*
-        window.formelo.Profile.getUserProfile()
-            .then(profile => {
-                let email = profile.email_address;
-                let mode = (email === 'rd@pmglobaltechnology.com' || email === 'demo@formelo.com') ? 'private' : 'public';
-                this.setState({
-                    mode,
-                    canShow:true
-                });
-                store.dispatch({
-                    type : 'APPLET_MODE',
-                    data : {
-                        value : mode
-                    }
-                });
-                store.dispatch({
-                    type : 'STUFF_CHANGED',
-                    data : {
-                        key : 'profile',
-                        value : profile
-                    }
-                })
-            })
-            .catch(e=>{
-                alert('To continue, kindly grant the app access to your server');
-            })
-            */
     }
     renderPage(route, navigator) {
         const props = route.props || {};
